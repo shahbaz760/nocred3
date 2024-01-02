@@ -1,0 +1,38 @@
+@import 'src/styles/var';
+
+.banner {
+  padding: var(--spacing-7xl) 0 var(--spacing-9xl);
+  .wrapper {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    @include max($md) {
+      flex-direction: column-reverse;
+    }
+  }
+  .banner_content {
+    flex-basis: 55%;
+    h1 {
+      margin-bottom: 1.5rem;
+      span {
+        display: block;
+        color: $primary;
+      }
+    }
+    h5 {
+      font-weight: 400;
+      line-height: 1.55;
+      max-width: 450px;
+      margin-bottom: 3rem;
+    }
+  }
+  .banner_img {
+    flex-basis: 45%;
+    text-align: left;
+    img {
+      max-width: none;
+      width: calc(100% + 100px);
+      margin-left: -50px;
+    }
+  }
+}

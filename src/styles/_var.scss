@@ -1,0 +1,85 @@
+// =========== scss variables =============
+$primary: #6e00ff;
+$black: #000;
+$black1: #464e59;
+$black2: #5d6776;
+$heading_color: #101828;
+$textWhite: #ffffff;
+
+// ============ breakPoints ==========
+
+$xxl: 1399;
+$xl: 1199;
+$lg: 991;
+$md: 767;
+$sm: 575;
+$xs: 375;
+
+@mixin min($value) {
+  @media screen and (min-width: (($value + 1)+ 'px')) {
+    @content;
+  }
+}
+@mixin max($value) {
+  @media screen and (max-width: ($value + 'px')) {
+    @content;
+  }
+}
+@mixin minMax($min, $max) {
+  @media (min-width: ($min + 'px')) and (max-width: ($max + 'px')) {
+    @content;
+  }
+}
+@mixin noTextSelect {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+@mixin row_col($width, $space, $gap, $jc) {
+  --width: #{$width};
+  --space: #{$space};
+  --gap: #{$gap};
+  --jc: #{$jc};
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: var(--jc);
+  margin: 0 calc(-1 * var(--space));
+  gap: var(--gap) 0;
+  > * {
+    padding: 0 var(--space);
+    flex-basis: var(--width);
+    max-width: var(--width);
+  }
+}
+
+// =================== css variables ===============
+@mixin cssVariables {
+  // ===== font variables =========
+  --f12: 12px;
+  --f14: 14px;
+  --f16: 16px;
+  --f18: 18px;
+  --f20: 20px;
+  --f22: 22px;
+  --f24: 24px;
+  --f30: 30px;
+
+  // ===== space variables =========
+  --spacing-2xl: 20px;
+  --spacing-7xl: 64px;
+  --spacing-9xl: 96px;
+
+  @include max($xl) {
+    --f24: 20px;
+  }
+  @include max($md) {
+    --f16: 14px;
+    --f20: 16px;
+    --f24: 18px;
+
+    --spacing-2xl: 14px;
+    --spacing-7xl: 38px;
+    --spacing-9xl: 54px;
+  }
+}

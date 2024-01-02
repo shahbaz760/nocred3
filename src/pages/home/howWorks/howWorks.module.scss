@@ -1,0 +1,64 @@
+@import 'src/styles/var';
+
+.howWorks {
+  padding: var(--spacing-9xl) 0;
+
+  .wrapper {
+    padding-top: var(--spacing-7xl);
+    --arrowWidth: 50%;
+    --gap: 1.5rem;
+    --width: 33.33%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(1.2 * var(--gap)) 0;
+    margin: 0 calc(-1 * var(--gap));
+    @include max($lg) {
+      --width: 100%;
+    }
+  }
+  .single_box {
+    position: relative;
+    flex-basis: var(--width);
+    max-width: var(--width);
+    padding: 0 var(--gap);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      max-width: 200px;
+    }
+    h4 {
+      font-size: var(--f24);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    p {
+      color: $black2;
+      font-size: var(--f16);
+    }
+    .arrow {
+      position: absolute;
+      right: 0;
+      transform: translateX(50%);
+      top: 50px;
+      width: calc(var(--arrowWidth) + (2 * var(--gap)));
+    }
+    &:last-of-type {
+      .arrow {
+        display: none;
+      }
+    }
+    @include max($xxl) {
+      --arrowWidth: 36%;
+    }
+    @include max($xl) {
+      --arrowWidth: 26%;
+    }
+    @include max($lg) {
+      .arrow {
+        display: none;
+      }
+    }
+  }
+}

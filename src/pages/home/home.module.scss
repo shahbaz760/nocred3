@@ -1,0 +1,13 @@
+@import 'src/styles/var';
+
+.page {
+}
+.first_view {
+  background-repeat: repeat;
+  position: relative;
+  background-blend-mode: overlay;
+  .first_viewInner {
+    position: relative;
+    z-index: 2;
+  }
+}
