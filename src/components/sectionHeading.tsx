@@ -3,6 +3,7 @@ import React, { FC, ReactNode } from 'react';
 interface IProps {
   heading: string | ReactNode;
   subHeading?: string | ReactNode;
+  noCenter?: boolean;
 }
 
 const SectionHeading: FC<IProps> = ({ heading, subHeading, noCenter }) => {

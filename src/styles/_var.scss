@@ -6,6 +6,7 @@ $black2: #5d6776;
 $heading_color: #101828;
 $textWhite: #ffffff;
 
+$borderColor: #eaecf0;
 // ============ breakPoints ==========
 
 $xxl: 1399;
@@ -66,11 +67,15 @@ $xs: 375;
   --f30: 30px;
 
   // ===== space variables =========
+  --spacing-xl: 16px;
   --spacing-2xl: 20px;
+  --spacing-3xl: 24px;
+  --spacing-4xl: 32px;
   --spacing-7xl: 64px;
   --spacing-9xl: 96px;
 
   @include max($xl) {
+    --f22: 18px;
     --f24: 20px;
   }
   @include max($md) {
@@ -79,7 +84,7 @@ $xs: 375;
     --f24: 18px;
 
     --spacing-2xl: 14px;
-    --spacing-7xl: 38px;
-    --spacing-9xl: 54px;
+    --spacing-7xl: 36px;
+    --spacing-9xl: 50px;
   }
 }

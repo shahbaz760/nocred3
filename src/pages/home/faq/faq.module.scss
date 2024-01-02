@@ -1,0 +1,40 @@
+@import 'src/styles/var';
+
+.faq {
+  padding: var(--spacing-9xl) 0;
+  .wrapper {
+    padding-top: var(--spacing-9xl);
+    :global {
+      .accordion {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-4xl);
+      }
+      .accordion-item {
+        border: none;
+        padding-top: var(--spacing-3xl);
+        border-top: 1px solid $borderColor;
+        &:first-of-type {
+          border: none;
+        }
+      }
+      .accordion-header {
+        margin-bottom: 8px;
+        h5 {
+          padding-right: 4rem;
+          color: $heading_color;
+        }
+        button {
+          background-color: transparent;
+          box-shadow: none;
+          padding: 0;
+        }
+      }
+      .accordion-body {
+        padding: 0;
+        padding-right: 4rem;
+        color: $black2;
+      }
+    }
+  }
+}

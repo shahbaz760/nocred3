@@ -1,8 +1,10 @@
 import { Container } from 'react-bootstrap';
 import styles from './home.module.scss';
 import Header from '../../common/header';
-import Banner from './banner';
-import HowItWorks from './howWorks';
+import Banner from './banner/banner';
+import HowItWorks from './howWorks/howWorks';
+import ExplorePlatform from './explore/explore';
+import Faq from './faq/faq';
 
 const Home = () => {
   return (
@@ -20,8 +22,10 @@ const Home = () => {
             <Banner />
           </div>
         </div>
-        <HowItWorks />
       </Container>
+      <HowItWorks />
+      <ExplorePlatform />
+      <Faq />
     </div>
   );
 };

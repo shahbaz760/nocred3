@@ -1,0 +1,51 @@
+@import 'src/styles/var';
+
+.explore {
+  padding: var(--spacing-9xl) 0;
+
+  .wrapper {
+  }
+  .single_row {
+    padding-top: var(--spacing-9xl);
+    --arrowWidth: 50%;
+    --gap: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    // gap: calc(1.2 * var(--gap)) 0;
+    align-items: center;
+    justify-content: space-between;
+    &:nth-of-type(even) {
+      flex-direction: row-reverse;
+    }
+  }
+  .imagePart {
+    --width: 50%;
+    flex-basis: var(--width);
+    max-width: var(--width);
+    @include max($md) {
+      --width: 100%;
+      text-align: center;
+      img {
+        max-width: 400px;
+      }
+    }
+  }
+  .contentPart {
+    --width: 50%;
+    flex-basis: var(--width);
+    max-width: 560px;
+    p {
+      margin-top: var(--spacing-xl);
+      color: $black2;
+    }
+    @include min($lg) {
+      padding: 0 20px;
+    }
+    @include max($md) {
+      --width: 100%;
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
