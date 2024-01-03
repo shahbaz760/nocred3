@@ -1,4 +1,4 @@
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Nav, Navbar } from 'react-bootstrap';
 import styles from './header.module.scss';
 const Header = () => {
   return (

@@ -1,0 +1,89 @@
+@import 'src/styles/var';
+
+.footer {
+  .footer_inner {
+    padding: 0 var(--spacing-4xl);
+  }
+  .footer_top {
+    padding: var(--spacing-7xl) 0 var(--spacing-6xl);
+    display: flex;
+    gap: var(--spacing-7xl);
+    @include max($lg) {
+      flex-wrap: wrap;
+    }
+  }
+  .footer_topLeft {
+    flex-basis: 320px;
+    color: $textColor1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-4xl);
+    img {
+      height: 52px;
+    }
+    @include max($lg) {
+      img {
+        height: 42px;
+      }
+    }
+  }
+  .footer_topLinks {
+    flex-grow: 1;
+    display: flex;
+    --gap: var(--spacing-4xl);
+    --width: 25%;
+    margin: 0 calc(-1 * var(--gap));
+    gap: calc(1.5 * var(--gap)) 0;
+    .links_column {
+      padding: 0 var(--gap);
+      flex-basis: var(--width);
+      max-width: var(--width);
+      h6 {
+        font-weight: 500;
+        color: $textColor2;
+        margin-bottom: var(--spacing-xl);
+      }
+    }
+    .links_list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-lg);
+      a {
+        font-weight: 500;
+        color: $textColor1;
+        text-decoration: none;
+      }
+    }
+    @include max($sm) {
+      flex-wrap: wrap;
+      --width: 50%;
+    }
+  }
+
+  // ==== bottom footer ========
+
+  .footer_bottom {
+    color: $textColor2;
+    padding: var(--spacing-7xl) 0 var(--spacing-6xl);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p {
+      text-align: center;
+    }
+    .socialLinks {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      a {
+        padding: 4px;
+      }
+    }
+    @include max($lg) {
+      padding-top: 0;
+      flex-direction: column-reverse;
+      gap: 1.25rem;
+    }
+  }
+}

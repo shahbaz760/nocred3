@@ -32,7 +32,13 @@
     img {
       max-width: none;
       width: calc(100% + 100px);
-      margin-left: -50px;
+      // margin-left: 50px;
+    }
+    @include max($md) {
+      img {
+        width: 100%;
+        margin: 0;
+      }
     }
   }
 }

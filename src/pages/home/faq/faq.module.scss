@@ -3,6 +3,8 @@
 .faq {
   padding: var(--spacing-9xl) 0;
   .wrapper {
+    max-width: 780px;
+    margin: auto;
     padding-top: var(--spacing-9xl);
     :global {
       .accordion {
@@ -14,20 +16,44 @@
         border: none;
         padding-top: var(--spacing-3xl);
         border-top: 1px solid $borderColor;
+        background-color: transparent;
+        position: relative;
+        :local {
+          .toggleIcon {
+            z-index: -2;
+            position: absolute;
+            right: 0;
+            top: var(--spacing-3xl);
+            svg {
+              height: 24px;
+              width: auto;
+            }
+          }
+        }
         &:first-of-type {
           border: none;
+          padding-top: 0;
+          :local {
+            .toggleIcon {
+              top: 0;
+            }
+          }
         }
       }
       .accordion-header {
-        margin-bottom: 8px;
+        padding-bottom: 10px;
         h5 {
-          padding-right: 4rem;
           color: $heading_color;
+          line-height: 1.45;
         }
         button {
           background-color: transparent;
           box-shadow: none;
           padding: 0;
+          padding-right: 4rem;
+          &::after {
+            display: none;
+          }
         }
       }
       .accordion-body {

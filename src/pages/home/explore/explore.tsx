@@ -1,21 +1,23 @@
 import { Container } from 'react-bootstrap';
+import { ExploreIcon1, ExploreIcon2 } from '../../../assets/svg';
 import SectionHeading from '../../../components/sectionHeading';
 import styles from './explore.module.scss';
-import { ArrowWaveDotted } from '../../../assets/svg/svg';
 
 const ExplorePlatform = () => {
   const BoxesList = [
-    {
-      image: '/images/home/explore2.svg',
-      heading: 'Save and Compare',
-      description:
-        "We're committed to ensuring you get the most reasonable legal rates available. Tap into our network of top attorneys who offer competitive contingency fees, meaning they only get paid if you win your case. We foster a competitive environment that drives down attorney fees, reducing a typical 33% rate to on average of 27% post settlement",
-    },
     {
       image: '/images/home/explore1.svg',
       heading: 'Save and Compare',
       description:
         "We're committed to ensuring you get the most reasonable legal rates available. Tap into our network of top attorneys who offer competitive contingency fees, meaning they only get paid if you win your case. We foster a competitive environment that drives down attorney fees, reducing a typical 33% rate to on average of 27% post settlement",
+      icon: <ExploreIcon1 />,
+    },
+    {
+      image: '/images/home/explore2.svg',
+      heading: 'Save and Compare',
+      description:
+        "We're committed to ensuring you get the most reasonable legal rates available. Tap into our network of top attorneys who offer competitive contingency fees, meaning they only get paid if you win your case. We foster a competitive environment that drives down attorney fees, reducing a typical 33% rate to on average of 27% post settlement",
+      icon: <ExploreIcon2 />,
     },
   ];
   return (
@@ -23,12 +25,13 @@ const ExplorePlatform = () => {
       <Container>
         <SectionHeading heading='Explore our platform' />
         <div className={styles.wrapper}>
-          {BoxesList.map((item) => (
-            <div className={styles.single_row}>
+          {BoxesList.map((item, index) => (
+            <div className={styles.single_row} key={index}>
               <div className={styles.imagePart}>
                 <img src={item.image} alt='' />
               </div>
               <div className={styles.contentPart}>
+                <div className={styles.icon}>{item.icon}</div>
                 <SectionHeading noCenter heading={item.heading} />
                 <p>{item.description}</p>
               </div>

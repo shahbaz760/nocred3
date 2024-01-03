@@ -10,12 +10,15 @@
     --arrowWidth: 50%;
     --gap: 1.5rem;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
     // gap: calc(1.2 * var(--gap)) 0;
     align-items: center;
     justify-content: space-between;
     &:nth-of-type(even) {
       flex-direction: row-reverse;
+    }
+    @include max($md) {
+      gap: 1rem;
     }
   }
   .imagePart {
@@ -26,6 +29,7 @@
       --width: 100%;
       text-align: center;
       img {
+        width: 100%;
         max-width: 400px;
       }
     }
@@ -37,6 +41,17 @@
     p {
       margin-top: var(--spacing-xl);
       color: $black2;
+    }
+    .icon {
+      width: 48px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background-color: #f4ebff;
+      @include flexCenter;
+      margin-bottom: var(--spacing-2xl);
+      svg {
+        max-width: 50%;
+      }
     }
     @include min($lg) {
       padding: 0 20px;

@@ -1,0 +1,61 @@
+@import 'src/styles/var';
+
+.testimonials {
+  padding: var(--spacing-9xl) 0 0;
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding: var(--spacing-10xl) 0;
+    margin: 0 calc(-1 * var(--gap));
+    gap: calc(2 * var(--gap)) 0;
+    --gap: 15px;
+    --width: 33.33%;
+    .single_box_col {
+      padding: 0 var(--gap);
+      width: var(--width);
+    }
+    .single_box {
+      background-color: $bg_grey;
+      padding: var(--spacing-7xl) var(--spacing-4xl);
+      text-align: center;
+      border-radius: 12px;
+      height: 100%;
+      h4 {
+        font-size: var(--f22);
+        line-height: 1.35;
+      }
+      .profile {
+        padding-top: var(--spacing-4xl);
+        img {
+          width: 62px;
+          aspect-ratio: 1;
+          border: 1px solid $borderColor;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+        .name {
+          margin: var(--spacing-xl) 0;
+        }
+        h5 {
+          margin-bottom: 4px;
+        }
+        p {
+          color: $black2;
+        }
+      }
+      .rating {
+        display: flex;
+        justify-content: center;
+        gap: 4px;
+        svg {
+          max-width: 20px;
+          max-height: 20px;
+        }
+      }
+    }
+    @include max($lg) {
+      padding: var(--spacing-7xl) 0;
+      --width: 100%;
+    }
+  }
+}

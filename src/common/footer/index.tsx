@@ -1,0 +1,89 @@
+import { Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import {
+  DribbleIcon,
+  FacebookIcon,
+  JdxIcon,
+  LinkedinIcon,
+  TwitterIcon,
+  VictoryIcon,
+} from '../../assets/svg/social';
+import styles from './footer.module.scss';
+const Footer = () => {
+  return (
+    <footer className={styles.footer}>
+      <Container>
+        <div className={styles.footer_inner}>
+          <div className={styles.footer_top}>
+            <div className={styles.footer_topLeft}>
+              <img src='/images/logo.svg' alt='logo' />
+              <p>We connect Attorneys with Clients.</p>
+            </div>
+            <div className={styles.footer_topLinks}>
+              <div className={styles.links_column}>
+                <h6>Product</h6>
+                <div className={styles.links_list}>
+                  <Link to=''>Overview</Link>
+                  <Link to=''>Features</Link>
+                  <Link to=''>Solutions</Link>
+                  <Link to=''>Tutorials</Link>
+                  <Link to=''>Pricing</Link>
+                  <Link to=''>Releases</Link>
+                </div>
+              </div>
+              <div className={styles.links_column}>
+                <h6>Resources</h6>
+                <div className={styles.links_list}>
+                  <Link to=''>Home</Link>
+                  <Link to=''>About</Link>
+                  <Link to=''>Contact Us</Link>
+                </div>
+              </div>
+              <div className={styles.links_column}>
+                <h6>Social</h6>
+                <div className={styles.links_list}>
+                  <Link to=''>Twitter</Link>
+                  <Link to=''>Facebook</Link>
+                </div>
+              </div>
+              <div className={styles.links_column}>
+                <h6>Legal</h6>
+                <div className={styles.links_list}>
+                  <Link to=''>Terms</Link>
+                  <Link to=''>Privacy</Link>
+                  <Link to=''>Cookies</Link>
+                  <Link to=''>Licenses</Link>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={styles.footer_bottom}>
+            <p>© 2023 Attorney Shoppe. All rights reserved.</p>
+            <div className={styles.socialLinks}>
+              <Link to=''>
+                <JdxIcon />
+              </Link>
+              <Link to=''>
+                <LinkedinIcon />
+              </Link>
+              <Link to=''>
+                <FacebookIcon />
+              </Link>
+              <Link to=''>
+                <TwitterIcon />
+              </Link>
+              <Link to=''>
+                <VictoryIcon />
+              </Link>
+              <Link to=''>
+                <DribbleIcon />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </footer>
+  );
+};
+
+export default Footer;

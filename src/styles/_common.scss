@@ -14,7 +14,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
   margin: 0;
 }
 h1 {
@@ -23,7 +24,7 @@ h1 {
   font-weight: 600;
 }
 h2 {
-  font-size: clamp(32px, 3.5vw, 48px);
+  font-size: clamp(26px, 3.5vw, 48px);
   font-weight: 600;
 }
 h3 {
@@ -40,6 +41,11 @@ h5 {
 }
 h6 {
   font-size: 16px;
+}
+.container {
+  @include max($sm) {
+    --bs-gutter-x: 2.5rem;
+  }
 }
 
 // =========== theme components styles ===========

@@ -1,7 +1,7 @@
 import { Container } from 'react-bootstrap';
 import SectionHeading from '../../../components/sectionHeading';
 import styles from './howWorks.module.scss';
-import { ArrowWaveDotted } from '../../../assets/svg/svg';
+import { ArrowWaveDotted } from '../../../assets/svg';
 
 const HowItWorks = () => {
   const BoxesList = [
@@ -29,8 +29,8 @@ const HowItWorks = () => {
       <Container>
         <SectionHeading heading='How it works' />
         <div className={styles.wrapper}>
-          {BoxesList.map((item) => (
-            <div className={styles.single_box}>
+          {BoxesList.map((item, index) => (
+            <div className={styles.single_box} key={index}>
               <img src={item.image} alt='' />
               <h4>{item.heading}</h4>
               <p>{item.subheading}</p>

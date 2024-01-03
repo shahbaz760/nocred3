@@ -1,0 +1,51 @@
+@import 'src/styles/var';
+
+.getTouch {
+  .getTouch_box {
+    padding: var(--spacing-4xl) 0 var(--spacing-5xl);
+    background-color: #f9fafb;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-4xl);
+  }
+  .images {
+    display: flex;
+    .single_img {
+      position: relative;
+      width: 54px;
+      aspect-ratio: 1;
+      border: 3px solid #fff;
+      border-radius: 50%;
+      img {
+        border: 2px solid $borderColor;
+        border-radius: 50%;
+        height: 100%;
+        width: 100%;
+      }
+      &.img1 {
+        transform: translateX(30%);
+      }
+      &.img2 {
+        z-index: 1;
+        transform: translateY(-10%);
+      }
+      &.img3 {
+        transform: translateX(-30%);
+      }
+    }
+  }
+  .content {
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    h5 {
+      font-size: var(--f20);
+    }
+    p {
+      color: $black2;
+    }
+  }
+}

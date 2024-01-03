@@ -1,8 +1,17 @@
+import { useState } from 'react';
 import { Accordion, Container } from 'react-bootstrap';
+import { MinusCircle, PlusCircle } from '../../../assets/svg';
 import SectionHeading from '../../../components/sectionHeading';
 import styles from './faq.module.scss';
+import { AccordionEventKey } from 'react-bootstrap/esm/AccordionContext';
 
 const Faq = () => {
+  const [activeAccordion, setActiveAccordion] = useState<
+    string | AccordionEventKey
+  >('0');
+
+  console.log(activeAccordion);
+
   const FaqList = [
     {
       heading: 'How does the attorney hiring process work?',
@@ -44,13 +53,23 @@ const Faq = () => {
           subHeading='Everything you need to know about the Attorney Shoppe'
         />
         <div className={styles.wrapper}>
-          <Accordion defaultActiveKey='0'>
-            {FaqList.map((item) => (
-              <Accordion.Item eventKey='0'>
+          <Accordion
+            activeKey={activeAccordion}
+            onSelect={(eventKey) => setActiveAccordion(eventKey)}
+          >
+            {FaqList.map((item, index) => (
+              <Accordion.Item eventKey={`${index}`} key={index}>
                 <Accordion.Header>
                   <h5>{item.heading}</h5>
                 </Accordion.Header>
                 <Accordion.Body>{item.description}</Accordion.Body>
+                <div className={styles.toggleIcon}>
+                  {`${index}` === activeAccordion ? (
+                    <MinusCircle />
+                  ) : (
+                    <PlusCircle />
+                  )}
+                </div>
               </Accordion.Item>
             ))}
           </Accordion>
