@@ -36,8 +36,8 @@ const Testimonials = () => {
           subHeading='Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
         />
         <div className={styles.wrapper}>
-          {BoxesContent.map((item) => (
-            <div className={styles.single_box_col}>
+          {BoxesContent.map((item, index) => (
+            <div className={styles.single_box_col} key={index}>
               <div className={styles.single_box}>
                 <h4>{item.heading}</h4>
                 <div className={styles.profile}>
@@ -47,8 +47,8 @@ const Testimonials = () => {
                     <p>{item.designation}</p>
                   </div>
                   <div className={styles.rating}>
-                    {[...Array(item.rating)].map(() => (
-                      <StarIcon />
+                    {[...Array(item.rating)].map((_, ratingIndex) => (
+                      <StarIcon key={ratingIndex} />
                     ))}
                   </div>
                 </div>

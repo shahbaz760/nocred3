@@ -10,8 +10,6 @@ const Faq = () => {
     string | AccordionEventKey
   >('0');
 
-  console.log(activeAccordion);
-
   const FaqList = [
     {
       heading: 'How does the attorney hiring process work?',
