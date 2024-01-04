@@ -2,10 +2,9 @@
 
 .footer {
   .footer_inner {
-    padding: 0 var(--spacing-4xl);
   }
   .footer_top {
-    padding: var(--spacing-7xl) 0 var(--spacing-6xl);
+    padding: var(--spacing-7xl) var(--spacing-4xl) var(--spacing-6xl);
     display: flex;
     gap: var(--spacing-7xl);
     @include max($lg) {
@@ -64,11 +63,14 @@
   // ==== bottom footer ========
 
   .footer_bottom {
-    color: $textColor2;
-    padding: var(--spacing-7xl) 0 var(--spacing-6xl);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background-color: $bg_grey;
+    .footer_bottomWrap {
+      color: $textColor2;
+      padding: var(--spacing-7xl) var(--spacing-4xl) var(--spacing-6xl);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
     p {
       text-align: center;
     }
@@ -81,9 +83,11 @@
       }
     }
     @include max($lg) {
-      padding-top: 0;
-      flex-direction: column-reverse;
-      gap: 1.25rem;
+      .footer_bottomWrap {
+        padding: var(--spacing-6xl) 0;
+        flex-direction: column-reverse;
+        gap: 1.25rem;
+      }
     }
   }
 }

@@ -21,7 +21,7 @@ const Home = () => {
           }}
         >
           <div className={styles.first_viewInner}>
-            <Header />
+            <Header noContainer />
             <Banner />
           </div>
         </div>
