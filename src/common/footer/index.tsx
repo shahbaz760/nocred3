@@ -12,8 +12,8 @@ import styles from './footer.module.scss';
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <Container>
-        <div className={styles.footer_inner}>
+      <div className={styles.footer_inner}>
+        <Container>
           <div className={styles.footer_top}>
             <div className={styles.footer_topLeft}>
               <img src='/images/logo.svg' alt='logo' />
@@ -35,8 +35,8 @@ const Footer = () => {
                 <h6>Resources</h6>
                 <div className={styles.links_list}>
                   <Link to=''>Home</Link>
-                  <Link to=''>About</Link>
-                  <Link to=''>Contact Us</Link>
+                  <Link to='/about'>About</Link>
+                  <Link to='/contact'>Contact Us</Link>
                 </div>
               </div>
               <div className={styles.links_column}>
@@ -57,31 +57,35 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className={styles.footer_bottom}>
-            <p>© 2023 Attorney Shoppe. All rights reserved.</p>
-            <div className={styles.socialLinks}>
-              <Link to=''>
-                <JdxIcon />
-              </Link>
-              <Link to=''>
-                <LinkedinIcon />
-              </Link>
-              <Link to=''>
-                <FacebookIcon />
-              </Link>
-              <Link to=''>
-                <TwitterIcon />
-              </Link>
-              <Link to=''>
-                <VictoryIcon />
-              </Link>
-              <Link to=''>
-                <DribbleIcon />
-              </Link>
+        </Container>
+        <div className={styles.footer_bottom}>
+          <Container>
+            <div className={styles.footer_bottomWrap}>
+              <p>© 2023 Attorney Shoppe. All rights reserved.</p>
+              <div className={styles.socialLinks}>
+                <Link to=''>
+                  <JdxIcon />
+                </Link>
+                <Link to=''>
+                  <LinkedinIcon />
+                </Link>
+                <Link to=''>
+                  <FacebookIcon />
+                </Link>
+                <Link to=''>
+                  <TwitterIcon />
+                </Link>
+                <Link to=''>
+                  <VictoryIcon />
+                </Link>
+                <Link to=''>
+                  <DribbleIcon />
+                </Link>
+              </div>
             </div>
-          </div>
+          </Container>
         </div>
-      </Container>
+      </div>
     </footer>
   );
 };

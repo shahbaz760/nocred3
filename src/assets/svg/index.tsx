@@ -78,3 +78,50 @@ export const StarIcon = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 );
+export const MessageIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg width='24' height='24' viewBox='0 0 24 24' fill='none' {...props}>
+    <path
+      fillRule='evenodd'
+      clipRule='evenodd'
+      d='M19.0714 19.0699C16.0152 22.1263 11.4898 22.7867 7.78642 21.074C7.23971 20.8539 6.79148 20.676 6.36537 20.676C5.17849 20.683 3.70117 21.8339 2.93336 21.067C2.16555 20.2991 3.31726 18.8206 3.31726 17.6266C3.31726 17.2004 3.14642 16.7602 2.92632 16.2124C1.21283 12.5096 1.87411 7.98269 4.93026 4.92721C8.8316 1.02443 15.17 1.02443 19.0714 4.9262C22.9797 8.83501 22.9727 15.1681 19.0714 19.0699Z'
+      stroke='black'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M15.9394 12.413H15.9484'
+      stroke='black'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M11.9304 12.413H11.9394'
+      stroke='black'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M7.92139 12.413H7.93039'
+      stroke='black'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+  </svg>
+);
+export const PhoneIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg width='24' height='24' viewBox='0 0 24 24' fill='none' {...props}>
+    <path
+      fillRule='evenodd'
+      clipRule='evenodd'
+      d='M11.5317 12.4724C15.5208 16.4604 16.4258 11.8467 18.9656 14.3848C21.4143 16.8328 22.8216 17.3232 19.7192 20.4247C19.3306 20.737 16.8616 24.4943 8.1846 15.8197C-0.493478 7.144 3.26158 4.67244 3.57397 4.28395C6.68387 1.17385 7.16586 2.58938 9.61449 5.03733C12.1544 7.5765 7.54266 8.48441 11.5317 12.4724Z'
+      stroke='black'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+  </svg>
+);

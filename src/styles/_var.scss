@@ -3,12 +3,15 @@ $primary: #6e00ff;
 $black: #000;
 $black1: #464e59;
 $black2: #5d6776;
+$black6: #e3e5e8;
 $textColor1: #475467;
 $textColor2: #667085;
 $heading_color: #101828;
 $bg_grey: #f9fafb;
 $textWhite: #ffffff;
+$textSecondary: #344054;
 
+$inputBorder: #d0d5dd;
 $borderColor: #eaecf0;
 // ============ breakPoints ==========
 
@@ -87,12 +90,18 @@ $xs: 375;
   --spacing-9xl: 96px;
   --spacing-10xl: 112px;
 
+  --container-padding-desktop: 32px;
+  @include max($xl) {
+    --container-padding-desktop: 0;
+  }
+
   @include max($xl) {
     --f22: 18px;
     --f24: 20px;
   }
   @include max($md) {
     --f16: 14px;
+    --f18: 16px;
     --f20: 16px;
     --f24: 18px;
 
