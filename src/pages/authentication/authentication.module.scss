@@ -1,0 +1,50 @@
+@import 'src/styles/var';
+
+.form_field_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+}
+
+.submit_btn {
+  button {
+    width: 100%;
+  }
+}
+.already_account {
+  text-align: center;
+  font-size: var(--f14);
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  color: $textColor1;
+  a {
+    font-weight: 600;
+  }
+}
+
+.signup_page {
+  .submit_btn {
+    margin: var(--spacing-3xl) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+  }
+}
+
+.login_page {
+  .submit_btn {
+    margin: var(--spacing-3xl) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+  }
+  .remember_wrap {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--f14);
+    a {
+      font-weight: 500;
+    }
+  }
+}

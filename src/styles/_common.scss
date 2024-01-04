@@ -33,6 +33,7 @@ h3 {
 }
 h4 {
   font-size: 36px;
+  font-weight: 600;
   @include max($md) {
     font-size: 28px;
   }
@@ -76,6 +77,11 @@ a {
     line-height: 1.25;
     min-height: 44px;
     padding: 10px 18px;
+  }
+  &.btn-outline-light {
+    background-color: transparent;
+    color: $textSecondary;
+    border-color: $inputBorder;
   }
 }
 

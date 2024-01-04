@@ -1,0 +1,41 @@
+@import 'src/styles/var';
+
+.layout_inner {
+  max-width: 768px;
+  margin: auto;
+  min-height: 100vh;
+  padding-top: var(--spacing-9xl);
+  position: relative;
+  &::before {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(5 * var(--spacing-9xl));
+    background-image: url('/images/authentication/boxes_pattern.png');
+    background-position: bottom;
+  }
+  .layout_wrapper {
+    max-width: 360px;
+    margin: auto;
+  }
+  .layout_heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: var(--spacing-4xl);
+    img {
+      height: 32px;
+    }
+    h4 {
+      margin: var(--spacing-3xl) 0 var(--spacing-lg);
+      font-size: var(--f30);
+    }
+    p {
+      color: $textColor1;
+    }
+  }
+}
