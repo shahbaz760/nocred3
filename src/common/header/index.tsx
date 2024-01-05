@@ -1,5 +1,6 @@
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import styles from './header.module.scss';
+import { NavLink } from 'react-router-dom';
 
 interface IProps {
   noContainer?: boolean;
@@ -18,9 +19,9 @@ const Header = ({ noContainer }: IProps) => {
           className='justify-content-end'
         >
           <Nav className={styles.navLinks}>
-            <Nav.Link href='/'>Home</Nav.Link>
-            <Nav.Link href='/about'>About</Nav.Link>
-            <Nav.Link href='/contact'>Contact Us</Nav.Link>
+            <NavLink to='/'>Home</NavLink>
+            <NavLink to='/about'>About</NavLink>
+            <NavLink to='/contact'>Contact Us</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

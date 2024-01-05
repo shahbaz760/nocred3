@@ -10,10 +10,13 @@
   .navLinks {
     color: $black1;
     gap: 1.25rem;
+    a {
+      color: inherit;
+      padding: 6px;
+    }
     :global {
-      a.nav-link {
-        color: inherit;
-        padding: 6px;
+      .active {
+        color: $black;
       }
     }
   }
