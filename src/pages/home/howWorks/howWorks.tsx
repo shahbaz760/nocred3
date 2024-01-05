@@ -6,22 +6,22 @@ import { ArrowWaveDotted } from '../../../assets/svg';
 const HowItWorks = () => {
   const BoxesList = [
     {
-      image: '/images/home/howItWorks.png',
+      image: '/images/home/how_works1.png',
       heading: 'Fill out the Intake Form',
       subheading:
         'Upload any necessary documents, fill out the case background, and let us take it from there.',
     },
     {
-      image: '/images/home/howItWorks.png',
-      heading: 'Fill out the Intake Form',
+      image: '/images/home/how_works2.png',
+      heading: 'Post the Case',
       subheading:
-        'Upload any necessary documents, fill out the case background, and let us take it from there.',
+        'When posting the case Attorneys see your case and start sending you proposals',
     },
     {
-      image: '/images/home/howItWorks.png',
-      heading: 'Fill out the Intake Form',
+      image: '/images/home/how_works3.png',
+      heading: 'Wait for Attorneys Call',
       subheading:
-        'Upload any necessary documents, fill out the case background, and let us take it from there.',
+        'Client send a call request to the Attorney, Attorney pays to accept the call request ',
     },
   ];
   return (

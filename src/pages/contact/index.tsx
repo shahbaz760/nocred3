@@ -20,9 +20,7 @@ const Contact = () => {
       message: '',
     },
     validationSchema: contactUsValidationScheme,
-    onSubmit: (values) => {
-      console.log('formik', values);
-    },
+    onSubmit: () => {},
   });
 
   const detailBox = [

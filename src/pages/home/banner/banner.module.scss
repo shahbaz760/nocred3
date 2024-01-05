@@ -31,8 +31,13 @@
     text-align: left;
     img {
       max-width: none;
-      width: calc(100% + 100px);
-      // margin-left: 50px;
+      width: 100%;
+    }
+    @include min($xl) {
+      img {
+        width: calc(100% + 60px);
+        margin-right: -60px;
+      }
     }
     @include max($md) {
       img {
