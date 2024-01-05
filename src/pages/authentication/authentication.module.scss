@@ -10,6 +10,10 @@
   button {
     width: 100%;
   }
+  .google_btn {
+    @include flexCenter;
+    gap: 8px;
+  }
 }
 .already_account {
   text-align: center;
@@ -31,6 +35,29 @@
     gap: var(--spacing-xl);
   }
 }
+.password_checks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  color: $textColor1;
+  font-size: var(--f14);
+  span {
+    display: flex;
+    gap: 8px;
+  }
+  svg {
+    width: 20px;
+    height: auto;
+    * {
+      fill: $inputBorder;
+    }
+    &.checked {
+      * {
+        fill: $primary;
+      }
+    }
+  }
+}
 
 .login_page {
   .submit_btn {
@@ -43,8 +70,19 @@
     display: flex;
     justify-content: space-between;
     font-size: var(--f14);
+    font-weight: 500;
+  }
+  .bottom_backBtn {
+    margin-top: var(--spacing-3xl);
+    display: flex;
+    justify-content: center;
+    font-size: var(--f14);
+    font-weight: 500;
     a {
-      font-weight: 500;
+      color: $textColor1;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
   }
 }

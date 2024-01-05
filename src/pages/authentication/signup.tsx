@@ -1,9 +1,11 @@
 import { useFormik } from 'formik';
 import { Link } from 'react-router-dom';
-import AuthenticationLayout from '../../layouts/auth/auth';
+import AuthenticationLayout from '../../layouts/auth/authLayout';
 import CustomButton from '../../theme/button';
 import InputField from '../../theme/input';
 import styles from './authentication.module.scss';
+import { GoogleLogo } from '../../assets/svg/logos';
+import { CheckCircleFilledIcon } from '../../assets/svg';
 const SignUp = () => {
   const formik = useFormik({
     initialValues: {
@@ -11,7 +13,7 @@ const SignUp = () => {
       email: '',
       password: '',
     },
-    onSubmit: (values) => {},
+    onSubmit: () => {},
   });
 
   return (
@@ -40,11 +42,20 @@ const SignUp = () => {
               name='password'
               placeholder='Create password'
             />
+            <div className={styles.password_checks}>
+              <span>
+                <CheckCircleFilledIcon className={styles.checked} /> Must be at
+                least 8 characters
+              </span>
+              <span>
+                <CheckCircleFilledIcon /> Must contain one special character
+              </span>
+            </div>
           </div>
           <div className={styles.submit_btn}>
             <CustomButton type='submit'>Get started</CustomButton>
-            <CustomButton variant='outline-light'>
-              Sign up with Google
+            <CustomButton variant='outline-light' className={styles.google_btn}>
+              <GoogleLogo /> Sign up with Google
             </CustomButton>
           </div>
           <div className={styles.already_account}>

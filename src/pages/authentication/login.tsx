@@ -1,18 +1,20 @@
 import { useFormik } from 'formik';
 import { Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import AuthenticationLayout from '../../layouts/auth/auth';
+import AuthenticationLayout from '../../layouts/auth/authLayout';
 import CustomButton from '../../theme/button';
 import InputField from '../../theme/input';
 import styles from './authentication.module.scss';
+import { GoogleLogo } from '../../assets/svg/logos';
 
 const Login = () => {
   const formik = useFormik({
     initialValues: {
       email: '',
       password: '',
+      remember: false,
     },
-    onSubmit: (values) => {},
+    onSubmit: () => {},
   });
 
   return (
@@ -34,24 +36,30 @@ const Login = () => {
               label='Password'
               name='password'
               placeholder='Create password'
+              type='password'
             />
             <div className={styles.remember_wrap}>
               <Form.Check // prettier-ignore
                 type='checkbox'
                 id='checkBox'
+                name='remember'
+                checked={formik.values.remember}
                 label={'Remember for 30 days'}
+                onChange={(e) =>
+                  formik.setFieldValue('remember', e.target.checked)
+                }
               />
-              <Link to=''>Forgot password</Link>
+              <Link to='/forgot-password'>Forgot password</Link>
             </div>
           </div>
           <div className={styles.submit_btn}>
             <CustomButton type='submit'>Get started</CustomButton>
-            <CustomButton variant='outline-light'>
-              Sign up with Google
+            <CustomButton variant='outline-light' className={styles.google_btn}>
+              <GoogleLogo /> Sign up with Google
             </CustomButton>
           </div>
           <div className={styles.already_account}>
-            Already have an account? <Link to='/login'>Login</Link>
+            Don't have an account? <Link to='/register'>Sign up</Link>
           </div>
         </form>
       </div>

@@ -16,7 +16,7 @@ const InputField: React.FC<
   const formikError = formik?.touched[name] ? formik?.errors[name] : null;
 
   return (
-    <Form.Group className='input_field_wrap' controlId={name}>
+    <Form.Group className={`field_wrap ${rest.className}`} controlId={name}>
       {label ? <Form.Label>{label}</Form.Label> : null}
       <Form.Control
         type='text'
@@ -24,7 +24,7 @@ const InputField: React.FC<
         rows={rows}
         onChange={formik ? (e) => formik?.handleChange(e) : () => {}}
         {...rest}
-        className={`${formikError ? 'has_error' : ''} ${rest.className}`}
+        className={`${formikError ? 'has_error' : ''}`}
       />
       {formikError ? (
         <span className='error'>

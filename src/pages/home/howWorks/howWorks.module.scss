@@ -27,6 +27,7 @@
     align-items: center;
     img {
       max-width: 200px;
+      max-height: 118px;
     }
     h4 {
       font-size: var(--f24);
@@ -42,7 +43,8 @@
       right: 0;
       transform: translateX(50%);
       top: 50px;
-      width: calc(var(--arrowWidth) + (2 * var(--gap)));
+      width: calc(0.9 * var(--arrowWidth) + (2 * var(--gap)));
+      height: auto;
     }
     &:last-of-type {
       .arrow {
@@ -50,10 +52,10 @@
       }
     }
     @include max($xxl) {
-      --arrowWidth: 36%;
+      --arrowWidth: 40%;
     }
     @include max($xl) {
-      --arrowWidth: 26%;
+      --arrowWidth: 36%;
     }
     @include max($lg) {
       .arrow {
