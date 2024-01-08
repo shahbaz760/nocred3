@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { FormikProps } from 'formik';
 import CustomButton from '../../../theme/button';
+import DateField from '../../../theme/date_input';
 import InputField from '../../../theme/input';
 import styles from '../postCase.module.scss';
 
@@ -40,12 +41,13 @@ const PostCaseStep1: React.FC<IProps> = ({ formik }) => {
             />
           </div>
           <div className={styles.md6}>
-            <InputField
-              label='Date of birth'
+            <DateField
               formik={formik}
-              placeholder=''
+              label='Date of birth'
               name='date_birth'
-              type='date'
+              selected={formik?.values?.date_birth}
+              onChange={(date) => formik.setFieldValue('date_birth', date)}
+              placeholderText='Select date'
             />
           </div>
         </div>
@@ -54,12 +56,13 @@ const PostCaseStep1: React.FC<IProps> = ({ formik }) => {
         <h5>Client's Personal Details</h5>
         <div className={styles.fields_wrapper}>
           <div className={styles.md6}>
-            <InputField
-              label='Date of accident'
+            <DateField
               formik={formik}
-              placeholder=''
+              label='Date of accident'
               name='date_accident'
-              type='date'
+              selected={formik?.values?.date_accident}
+              onChange={(date) => formik.setFieldValue('date_accident', date)}
+              placeholderText='Select date'
             />
           </div>
           <div className={styles.md6}>

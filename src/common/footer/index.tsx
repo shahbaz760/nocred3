@@ -1,13 +1,5 @@
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import {
-  DribbleIcon,
-  FacebookIcon,
-  JdxIcon,
-  LinkedinIcon,
-  TwitterIcon,
-  VictoryIcon,
-} from '../../assets/svg/social';
 import styles from './footer.module.scss';
 const Footer = () => {
   return (

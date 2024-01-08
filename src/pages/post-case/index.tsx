@@ -1,6 +1,5 @@
 import { useFormik } from 'formik';
-import moment from 'moment';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { ArrowRightIcon, CheckCircleFilledIcon } from '../../assets/svg';
@@ -23,8 +22,8 @@ const PostCase = () => {
       full_name: '',
       phone_number: '',
       email_address: '',
-      date_birth: moment('2000-01-01').format('YYYY-MM-DD'),
-      date_accident: moment().format('YYYY-MM-DD'),
+      date_birth: new Date(),
+      date_accident: new Date(),
       location_accident: '',
       description_accident: '',
       weather_condition: '',
@@ -75,7 +74,7 @@ const PostCase = () => {
         <div className={styles.page_wrapper}>
           <div className={styles.horizontal_tabs}>
             {topTabs.map((item, index) => (
-              <>
+              <React.Fragment key={index}>
                 <span
                   className={`${styles.single_tab} ${
                     index < activeStep ? styles.active : ''
@@ -96,7 +95,7 @@ const PostCase = () => {
                     <ArrowRightIcon />
                   </span>
                 ) : null}
-              </>
+              </React.Fragment>
             ))}
           </div>
 

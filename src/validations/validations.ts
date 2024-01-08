@@ -36,11 +36,7 @@ export const nameSchema = (message?: string) =>
     .required(message ?? 'This field is required');
 
 export const dateSchema = (message?: string) =>
-  yup
-    .string()
-    .trim()
-    .max(20, 'Maximum 20 character')
-    .required(message ?? 'This field is required');
+  yup.date().required(message ?? 'This field is required');
 
 export const yesNoSelect = (message?: string) =>
   yup

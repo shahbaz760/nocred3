@@ -38,6 +38,25 @@
         border-color: currentColor;
       }
     }
+    @include max($lg) {
+      padding: var(--spacing-4xl) 0;
+      flex-wrap: wrap;
+      gap: 6px;
+      .arrowIcon {
+        // display: none;
+        flex-basis: 100%;
+        aspect-ratio: 0;
+        svg {
+          transform: rotate(90deg);
+        }
+      }
+      .single_tab {
+        // width: 100%;
+        // max-width: 260px;
+        justify-content: center;
+        font-size: 12px;
+      }
+    }
   }
 }
 .form_card {
@@ -57,6 +76,20 @@
     gap: var(--spacing-4xl);
     > * {
       flex-basis: 50%;
+    }
+  }
+  @include max($md) {
+    padding: var(--spacing-3xl);
+    .submit_btn_wrap {
+      gap: var(--spacing-lg);
+    }
+  }
+  @include max($sm) {
+    .submit_btn_wrap {
+      flex-wrap: wrap-reverse;
+      > * {
+        flex-basis: 100%;
+      }
     }
   }
 }
