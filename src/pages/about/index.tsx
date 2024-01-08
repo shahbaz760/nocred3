@@ -11,11 +11,12 @@ const About = () => {
       <div className={styles.page_content}>
         <Container>
           <div className={styles.page_heading}>
-            <SectionHeading heading='Attorney Shoppe is a platform where Client & Attorney are Connected' />
+            <SectionHeading heading='Where Clients and Attorneys Connect Effortlessly' />
           </div>
           <div className={styles.wrapper}>
             <div className={styles.content}>
-              <h4>Company story</h4>
+              <h6 className='heading_sm_primary'>Our story</h6>
+              <h4>The AttorneyShoppe Journey</h4>
               <p>
                 Mi tincidunt elit, id quisque ligula ac diam, amet. Vel etiam
                 suspendisse morbi eleifend faucibus eget vestibulum felis.
@@ -41,9 +42,13 @@ const About = () => {
                 aenean.
               </p>
             </div>
-            <div className={styles.image}>
-              <img src='/images/about/banner.jpg' alt='' />
-            </div>
+            <picture className={styles.image}>
+              <source
+                media='(min-width:768px)'
+                srcSet='/images/about/about.jpg'
+              />
+              <img src='/images/about/about_mobile.jpg' alt='' />
+            </picture>
           </div>
         </Container>
       </div>

@@ -1,6 +1,9 @@
 @import 'src/styles/var';
 
 .getTouch {
+  @include max($md) {
+    margin-bottom: calc(var(--spacing-7xl) + var(--spacing-6xl));
+  }
   .getTouch_box {
     padding: var(--spacing-4xl) 0 var(--spacing-5xl);
     background-color: #f9fafb;
@@ -10,6 +13,9 @@
     align-items: center;
     text-align: center;
     gap: var(--spacing-4xl);
+    @include max($md) {
+      gap: var(--spacing-3xl);
+    }
   }
   .images {
     display: flex;
@@ -42,10 +48,15 @@
     display: flex;
     flex-direction: column;
     h5 {
-      font-size: var(--f20);
+      font-size: 20px;
     }
     p {
       color: $black2;
+    }
+    @include max($md) {
+      h5 {
+        font-weight: 600;
+      }
     }
   }
 }

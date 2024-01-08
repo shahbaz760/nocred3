@@ -2,9 +2,9 @@
 
 html {
   font-size: 16px;
-  @include max($md) {
-    font-size: 14px;
-  }
+  // @include max($md) {
+  //   font-size: 14px;
+  // }
 }
 img {
   max-width: 100%;
@@ -19,9 +19,12 @@ p {
   margin: 0;
 }
 h1 {
-  font-size: clamp(38px, 3.9vw, 56px);
+  font-size: clamp(30px, 3.9vw, 56px);
   line-height: 1.2;
   font-weight: 600;
+  @include max($md) {
+    line-height: 1.26;
+  }
 }
 h2 {
   font-size: clamp(26px, 3.5vw, 48px);
@@ -41,7 +44,9 @@ h4 {
 h5 {
   font-size: 18px;
   font-weight: 500;
+  line-height: 1.5;
   @include max($sm) {
+    line-height: 1.55;
     font-size: 16px;
   }
 }
@@ -50,13 +55,17 @@ h6 {
 }
 p {
   color: $black2;
+  line-height: 1.55;
+  @include max($md) {
+    line-height: 1.5;
+  }
 }
 a {
   text-decoration: none;
 }
 .container {
-  @include max($sm) {
-    --bs-gutter-x: 2.5rem;
+  @include max($md) {
+    --bs-gutter-x: 32px;
   }
 }
 .form-check-label {

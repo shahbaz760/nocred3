@@ -1,7 +1,7 @@
 import { Container } from 'react-bootstrap';
 import SectionHeading from '../../../components/sectionHeading';
 import styles from './howWorks.module.scss';
-import { ArrowWaveDotted } from '../../../assets/svg';
+import { ArrowWaveDotted, ArrowWaveVerticalDotted } from '../../../assets/svg';
 
 const HowItWorks = () => {
   const BoxesList = [
@@ -34,7 +34,10 @@ const HowItWorks = () => {
               <img src={item.image} alt='' />
               <h4>{item.heading}</h4>
               <p>{item.subheading}</p>
-              <ArrowWaveDotted className={styles.arrow} />
+              <div className={styles.arrow_wrap}>
+                <ArrowWaveDotted className={styles.arrow_desktop} />
+                <ArrowWaveVerticalDotted className={styles.arrow_mobile} />
+              </div>
             </div>
           ))}
         </div>

@@ -15,10 +15,10 @@ const Home = () => {
       <Container>
         <div
           className={styles.first_view}
-          style={{
-            backgroundImage:
-              'url(/images/home/dots.png), linear-gradient(90deg, #fff, #ffffff8b, #ffffff8b, #fff)',
-          }}
+          // style={{
+          //   backgroundImage:
+          //     'url(/images/home/dots.png), linear-gradient(90deg, #fff, #ffffff8b, #ffffff8b, #fff)',
+          // }}
         >
           <div className={styles.first_viewInner}>
             <Header noContainer />

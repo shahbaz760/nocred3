@@ -8,7 +8,7 @@ interface IProps {
 
 const SectionHeading: FC<IProps> = ({ heading, subHeading, noCenter }) => {
   return (
-    <div className={`section_heading ${noCenter ? 'text-start' : ''}`}>
+    <div className={`section_heading ${noCenter ? 'noCenter' : ''}`}>
       {typeof heading === 'string' ? <h2>{heading}</h2> : heading}
       {typeof subHeading === 'string' ? <h5>{subHeading}</h5> : subHeading}
     </div>

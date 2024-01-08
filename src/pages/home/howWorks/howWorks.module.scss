@@ -2,7 +2,9 @@
 
 .howWorks {
   padding: var(--spacing-9xl) 0;
-
+  @include max($lg) {
+    padding-bottom: var(--spacing-7xl);
+  }
   .wrapper {
     padding-top: var(--spacing-7xl);
     --arrowWidth: 50%;
@@ -13,7 +15,9 @@
     gap: calc(1.2 * var(--gap)) 0;
     margin: 0 calc(-1 * var(--gap));
     @include max($lg) {
+      padding-top: var(--spacing-6xl);
       --width: 100%;
+      --gap: 0;
     }
   }
   .single_box {
@@ -27,7 +31,6 @@
     align-items: center;
     img {
       max-width: 200px;
-      max-height: 118px;
     }
     h4 {
       font-size: var(--f24);
@@ -36,9 +39,8 @@
     }
     p {
       color: $black2;
-      font-size: var(--f16);
     }
-    .arrow {
+    .arrow_desktop {
       position: absolute;
       right: 0;
       transform: translateX(50%);
@@ -47,8 +49,16 @@
       height: auto;
     }
     &:last-of-type {
-      .arrow {
+      .arrow_desktop {
         display: none;
+      }
+    }
+    .arrow_mobile {
+      display: none;
+    }
+    @include min($md) {
+      img {
+        max-height: 118px;
       }
     }
     @include max($xxl) {
@@ -58,8 +68,23 @@
       --arrowWidth: 36%;
     }
     @include max($lg) {
-      .arrow {
+      .arrow_desktop {
         display: none;
+      }
+      .arrow_wrap {
+        padding: var(--spacing-5xl) 0;
+      }
+      .arrow_mobile {
+        display: block;
+        max-height: 90px;
+      }
+      &:last-of-type {
+        .arrow_wrap {
+          padding: 0;
+        }
+        .arrow_mobile {
+          display: none;
+        }
       }
     }
   }

@@ -5,8 +5,10 @@
   }
   .page_heading {
     padding: var(--spacing-9xl) 0;
-    max-width: 768px;
-    margin: auto;
+    @include max($xl) {
+      text-align: center;
+      padding: var(--spacing-7xl) 0 calc(2 * var(--spacing-6xl));
+    }
   }
   .wrapper {
     padding: var(--spacing-9xl) var(--container-padding-desktop);
@@ -14,6 +16,7 @@
     align-items: center;
     gap: var(--spacing-7xl);
     @include max($lg) {
+      gap: var(--spacing-6xl);
       flex-direction: column;
       padding-top: 0;
     }
@@ -22,10 +25,10 @@
     flex-grow: 1;
     flex-basis: var(--width);
     h4 {
+      margin-top: var(--spacing-lg);
       margin-bottom: var(--spacing-6xl);
     }
     p {
-      font-weight: 500;
       line-height: 1.55;
       font-size: var(--f18);
       &:not(:last-child) {
@@ -42,6 +45,9 @@
           margin-bottom: var(--spacing-2xl);
         }
       }
+    }
+    @include max($md) {
+      text-align: center;
     }
   }
   .image {

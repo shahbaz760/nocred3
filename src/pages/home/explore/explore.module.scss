@@ -23,6 +23,7 @@
       }
     }
     @include max($md) {
+      padding-top: var(--spacing-6xl);
       gap: 1rem;
     }
   }
@@ -42,7 +43,7 @@
   .contentPart {
     --width: 50%;
     flex-basis: var(--width);
-    max-width: 560px;
+    max-width: 530px;
     p {
       margin-top: var(--spacing-xl);
       color: $black2;
@@ -62,9 +63,24 @@
     //   padding: 0 20px;
     // }
     @include max($md) {
+      text-align: center;
+      .icon {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      :global {
+        .section_heading {
+          &.noCenter {
+            text-align: inherit;
+          }
+        }
+      }
       --width: 100%;
       h2 {
         font-size: 1.5rem;
+      }
+      p {
+        margin-top: 8px;
       }
     }
   }

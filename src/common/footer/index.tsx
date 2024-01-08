@@ -32,18 +32,11 @@ const Footer = () => {
                 </div>
               </div>
               <div className={styles.links_column}>
-                <h6>Resources</h6>
+                <h6>Company</h6>
                 <div className={styles.links_list}>
                   <Link to=''>Home</Link>
                   <Link to='/about'>About</Link>
                   <Link to='/contact'>Contact Us</Link>
-                </div>
-              </div>
-              <div className={styles.links_column}>
-                <h6>Social</h6>
-                <div className={styles.links_list}>
-                  <Link to=''>Twitter</Link>
-                  <Link to=''>Facebook</Link>
                 </div>
               </div>
               <div className={styles.links_column}>
@@ -62,7 +55,7 @@ const Footer = () => {
           <Container>
             <div className={styles.footer_bottomWrap}>
               <p>© 2023 Attorney Shoppe. All rights reserved.</p>
-              <div className={styles.socialLinks}>
+              {/* <div className={styles.socialLinks}>
                 <Link to=''>
                   <JdxIcon />
                 </Link>
@@ -81,7 +74,7 @@ const Footer = () => {
                 <Link to=''>
                   <DribbleIcon />
                 </Link>
-              </div>
+              </div> */}
             </div>
           </Container>
         </div>

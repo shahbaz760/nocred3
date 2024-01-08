@@ -2,6 +2,9 @@
 
 .testimonials {
   padding: var(--spacing-9xl) 0 0;
+  @include max($md) {
+    display: none;
+  }
   .wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -21,8 +24,9 @@
       border-radius: 12px;
       height: 100%;
       h4 {
-        font-size: var(--f22);
+        font-size: var(--f24);
         line-height: 1.35;
+        font-weight: 500;
       }
       .profile {
         padding-top: var(--spacing-4xl);

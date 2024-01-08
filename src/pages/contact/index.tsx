@@ -128,10 +128,10 @@ const Contact = () => {
                     }
                   />
                 </Col>
-                <CustomButton className={styles.form_btn} type='submit'>
-                  Send Message
-                </CustomButton>
               </Row>
+              <CustomButton className={styles.form_btn} type='submit'>
+                Send Message
+              </CustomButton>
             </div>
           </form>
         </div>

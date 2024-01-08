@@ -5,10 +5,16 @@
     linear-gradient(0deg, rgba(white, 0.7), rgba(white, 0.3));
   background-blend-mode: overlay;
   background-position: top;
+  @include max($md) {
+    background-size: 200%;
+  }
 }
 .page_heading {
   padding: var(--spacing-9xl) 0;
   text-align: center;
+  @include max($md) {
+    padding: var(--spacing-7xl) 0 var(--spacing-6xl);
+  }
 }
 .detail_wrapper {
   --gap: 12px;
@@ -20,7 +26,7 @@
   padding: var(--spacing-9xl) var(--container-padding-desktop);
   @include max($lg) {
     --width: 100%;
-    padding-top: 0;
+    padding: 0;
   }
 }
 .detail_box_col {
@@ -55,6 +61,12 @@
   a {
     text-decoration: none;
   }
+  @include max($md) {
+    text-align: center;
+    .icon {
+      margin: auto;
+    }
+  }
 }
 
 // ======= form section ===========
@@ -75,5 +87,11 @@
   .form_btn {
     width: 100%;
     margin-top: var(--spacing-4xl);
+  }
+  @include max($md) {
+    padding: var(--spacing-7xl) 0;
+    .heading {
+      padding-bottom: var(--spacing-7xl);
+    }
   }
 }

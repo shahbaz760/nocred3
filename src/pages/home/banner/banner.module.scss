@@ -2,12 +2,19 @@
 
 .banner {
   padding: var(--spacing-7xl) 0 var(--spacing-9xl);
+  @include max($md) {
+    padding-bottom: var(--spacing-7xl);
+  }
   .wrapper {
+    position: relative;
     align-items: center;
     display: flex;
     flex-wrap: wrap;
     @include max($md) {
-      flex-direction: column-reverse;
+      flex-direction: column;
+      gap: var(--spacing-6xl);
+      padding-bottom: calc(var(--spacing-6xl) + var(--spacing-3xl));
+      // align-items: center;
     }
   }
   .banner_content {
@@ -20,10 +27,32 @@
       }
     }
     h5 {
+      color: $black1;
       font-weight: 400;
       line-height: 1.55;
       max-width: 450px;
       margin-bottom: 3rem;
+    }
+    @include max($md) {
+      text-align: center;
+      h1 {
+        span {
+          display: inline;
+        }
+      }
+      h5 {
+        margin: 0;
+      }
+      .post_btn {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        button {
+          height: 44px;
+          width: 100%;
+        }
+      }
     }
   }
   .banner_img {
@@ -40,9 +69,11 @@
       }
     }
     @include max($md) {
+      flex-basis: auto;
+      overflow: hidden;
       img {
-        width: 100%;
-        margin: 0;
+        width: calc(100% + 80px);
+        margin-left: -40px;
       }
     }
   }

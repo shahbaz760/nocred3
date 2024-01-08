@@ -11,7 +11,8 @@ const Header = ({ noContainer }: IProps) => {
     <Container className={noContainer ? 'p-0' : ''}>
       <Navbar collapseOnSelect expand='lg' className={styles.header}>
         <Navbar.Brand href='/' className={styles.logo}>
-          <img src='/images/logo.svg' alt='' />
+          <img src='/images/logo.svg' alt='' className={styles.desktop_img} />
+          <img src='/icons/icon.svg' alt='' className={styles.mobile_img} />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse
