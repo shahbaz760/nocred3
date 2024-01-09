@@ -44,6 +44,8 @@ const Contact = () => {
     try {
       const data = contactFormTemplate(values);
       const responseStatus = await SendGridSubmitCall(data);
+      console.log('responseStatus', responseStatus);
+
       if (responseStatus) {
         formik.resetForm();
         toast.success('Email send successfully');

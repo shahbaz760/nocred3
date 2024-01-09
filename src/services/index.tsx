@@ -38,10 +38,10 @@ export const SendGridSubmitCall = (htmlTemplate: ReactNode) => {
       ) {
         return true;
       } else {
-        return null;
+        return false;
       }
     })
     .catch(function () {
-      return null;
+      return false;
     });
 };
