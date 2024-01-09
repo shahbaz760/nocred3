@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { FormikProps } from 'formik';
 import CustomButton from '../../../theme/button';
 import DateField from '../../../theme/date_input';

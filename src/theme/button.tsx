@@ -17,12 +17,7 @@ const CustomButton: React.FC<IProps> = ({ loading, ...rest }) => {
       {rest.children}
       {loading && (
         <span className='loader'>
-          <RotatingLines
-            visible={true}
-            height='20'
-            width='20'
-            strokeColor='#fff'
-          />
+          <RotatingLines visible={true} strokeColor='#fff' />
         </span>
       )}
     </Button>

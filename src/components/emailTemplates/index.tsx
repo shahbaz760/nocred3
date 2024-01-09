@@ -10,7 +10,7 @@ const tableLabelStyle =
 const tableValueStyle =
   'padding: 10px; padding-right: 0; width: 60%; color:#4a4a4a; font-size: 16px';
 
-export const contactFormTemplate = (values) => {
+export const contactFormTemplate = (values: any) => {
   return `<div style='${containerStyle}'>
       <h1 style='${h1Style}'>User contact us form</h1>
       <table style='${tableStyle}'>
@@ -34,7 +34,7 @@ export const contactFormTemplate = (values) => {
     </div>`;
 };
 
-export const postCaseFormTemplate = (values) => {
+export const postCaseFormTemplate = (values: any) => {
   return `<div style='${containerStyle}'>
       <h1 style='${h1Style}'>Case Detail</h1>
       <h2 style='${h2Style}'>Client's Personal Details</h2>

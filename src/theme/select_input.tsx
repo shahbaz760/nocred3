@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { FormikProps } from 'formik';
 import { ReactNode } from 'react';
 import { Form, FormSelectProps } from 'react-bootstrap';
