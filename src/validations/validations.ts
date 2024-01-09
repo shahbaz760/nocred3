@@ -32,7 +32,7 @@ export const nameSchema = (message?: string) =>
   yup
     .string()
     .trim()
-    .max(30, 'Maximum 30 character')
+    .max(24, 'Maximum 24 character')
     .required(message ?? 'This field is required');
 
 export const dateSchema = (message?: string) =>
@@ -54,6 +54,10 @@ export const contactUsValidationScheme = yup.object().shape({
     .trim()
     .max(800, 'Maximum 800 character allowed')
     .required('Message is required'),
+  accept_terms: yup
+    .boolean()
+    .required('You Must accept policies')
+    .oneOf([true], 'You Must accept policies'),
 });
 
 export const postCaseValidationStep1 = yup.object().shape({

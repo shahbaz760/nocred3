@@ -9,9 +9,14 @@ import { Dispatch, SetStateAction } from 'react';
 interface IProps {
   formik: FormikProps<any>;
   setActiveStep: Dispatch<SetStateAction<number>>;
+  loading?: boolean;
 }
 
-const PostCaseStep3: React.FC<IProps> = ({ formik, setActiveStep }) => {
+const PostCaseStep3: React.FC<IProps> = ({
+  formik,
+  loading,
+  setActiveStep,
+}) => {
   return (
     <div className={styles.form_card}>
       <h4>Other Party's Details</h4>
@@ -59,7 +64,7 @@ const PostCaseStep3: React.FC<IProps> = ({ formik, setActiveStep }) => {
         >
           Cancel
         </CustomButton>
-        <CustomButton onClick={() => formik.handleSubmit()}>
+        <CustomButton loading={loading} onClick={() => formik.handleSubmit()}>
           Save & Finish
         </CustomButton>
       </div>

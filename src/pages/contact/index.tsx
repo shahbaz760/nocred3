@@ -1,16 +1,29 @@
+import { useFormik } from 'formik';
+import { useState } from 'react';
 import { Col, Container, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { toast } from 'sonner';
 import { MessageIcon, PhoneIcon } from '../../assets/svg';
 import Footer from '../../common/footer';
 import Header from '../../common/header';
+import { contactFormTemplate } from '../../components/emailTemplates';
 import SectionHeading from '../../components/sectionHeading';
-import styles from './contact.module.scss';
-import InputField from '../../theme/input';
-import { useFormik } from 'formik';
+import { SendGridSubmitCall } from '../../services';
 import CustomButton from '../../theme/button';
+import InputField from '../../theme/input';
 import { contactUsValidationScheme } from '../../validations/validations';
+import styles from './contact.module.scss';
+
+interface formProps {
+  first_name: string;
+  last_name: string;
+  email: string;
+  phone: string;
+  message: string;
+}
 
 const Contact = () => {
+  const [loading, setLoading] = useState(false);
   const formik = useFormik({
     initialValues: {
       first_name: '',
@@ -18,10 +31,30 @@ const Contact = () => {
       email: '',
       phone: '',
       message: '',
+      accept_terms: false,
     },
     validationSchema: contactUsValidationScheme,
-    onSubmit: () => {},
+    onSubmit: (values) => {
+      if (!loading) handleSubmit(values);
+    },
   });
+
+  const handleSubmit = async (values: formProps) => {
+    setLoading(true);
+    try {
+      const data = contactFormTemplate(values);
+      const responseStatus = await SendGridSubmitCall(data);
+      if (responseStatus) {
+        formik.resetForm();
+        toast.success('Email send successfully');
+      } else {
+        toast.error('Something went wrong, Please try after sometime');
+      }
+    } catch (error) {
+      toast.error('Something went wrong, Please try after sometime');
+    }
+    setLoading(false);
+  };
 
   const detailBox = [
     {
@@ -114,10 +147,15 @@ const Contact = () => {
                     name='message'
                   />
                 </Col>
-                <Col md={12}>
-                  <Form.Check // prettier-ignore
+                <Col md={12} className='position-relative'>
+                  <Form.Check
                     type='checkbox'
                     id='checkBox'
+                    name='accept_terms'
+                    checked={formik.values.accept_terms}
+                    onChange={(e) =>
+                      formik.setFieldValue('accept_terms', e.target.checked)
+                    }
                     label={
                       <>
                         You agree to our friendly{' '}
@@ -127,9 +165,18 @@ const Contact = () => {
                       </>
                     }
                   />
+                  {formik.errors.accept_terms && formik.touched.accept_terms ? (
+                    <span className='input_check_error'>
+                      {formik.errors.accept_terms}
+                    </span>
+                  ) : null}
                 </Col>
               </Row>
-              <CustomButton className={styles.form_btn} type='submit'>
+              <CustomButton
+                className={styles.form_btn}
+                type='submit'
+                loading={loading}
+              >
                 Send Message
               </CustomButton>
             </div>

@@ -2,7 +2,10 @@ import { useFormik } from 'formik';
 import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { toast } from 'sonner';
 import { ArrowRightIcon, CheckCircleFilledIcon } from '../../assets/svg';
+import { postCaseFormTemplate } from '../../components/emailTemplates';
+import { SendGridSubmitCall } from '../../services';
 import CustomButton from '../../theme/button';
 import {
   postCaseValidationStep1,
@@ -15,15 +18,20 @@ import PostCaseStep2 from './steps/step2';
 import PostCaseStep3 from './steps/step3';
 
 const PostCase = () => {
+  const [loading, setLoading] = useState(false);
   const [activeStep, setActiveStep] = useState(1);
+
+  const currentDate = new Date();
+  const twentyYearsAgo = new Date(currentDate);
+  twentyYearsAgo.setFullYear(currentDate.getFullYear() - 30);
 
   const formikStep1 = useFormik({
     initialValues: {
       full_name: '',
       phone_number: '',
       email_address: '',
-      date_birth: new Date(),
-      date_accident: new Date(),
+      date_birth: twentyYearsAgo,
+      date_accident: currentDate,
       location_accident: '',
       description_accident: '',
       weather_condition: '',
@@ -58,9 +66,33 @@ const PostCase = () => {
     },
     validationSchema: postCaseValidationStep3,
     onSubmit: () => {
-      setActiveStep(4);
+      if (!loading) handleSubmit();
     },
   });
+
+  const handleSubmit = async () => {
+    setLoading(true);
+    try {
+      const data = postCaseFormTemplate({
+        ...formikStep1.values,
+        ...formikStep2.values,
+        ...formikStep3.values,
+      });
+      const responseStatus = await SendGridSubmitCall(data);
+      if (responseStatus) {
+        formikStep1.resetForm();
+        formikStep2.resetForm();
+        formikStep3.resetForm();
+        setActiveStep(4);
+        toast.success('Email send successfully');
+      } else {
+        toast.error('Something went wrong, Please try after sometime');
+      }
+    } catch (error) {
+      toast.error('Something went wrong, Please try after sometime');
+    }
+    setLoading(false);
+  };
 
   const topTabs = [
     { title: 'Client and Accident Details' },
@@ -104,7 +136,11 @@ const PostCase = () => {
           ) : activeStep === 2 ? (
             <PostCaseStep2 formik={formikStep2} setActiveStep={setActiveStep} />
           ) : activeStep === 3 ? (
-            <PostCaseStep3 formik={formikStep3} setActiveStep={setActiveStep} />
+            <PostCaseStep3
+              formik={formikStep3}
+              setActiveStep={setActiveStep}
+              loading={loading}
+            />
           ) : activeStep === 4 ? (
             <div className={styles.complete_view}>
               <CheckCircleFilledIcon />

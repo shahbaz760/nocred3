@@ -20,6 +20,7 @@ const DateField: React.FC<IProps> = ({ name, formik, label, ...rest }) => {
         dateFormat='MMM dd, yyyy'
         selected={formikValue}
         customInput={<Form.Control type='text' className='form-control' />}
+        maxDate={new Date()}
         {...rest}
         className={`${formikError ? 'has_error' : ''}`}
       />

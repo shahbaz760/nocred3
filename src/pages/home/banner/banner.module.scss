@@ -35,11 +35,11 @@
     }
     @include max($md) {
       text-align: center;
-      h1 {
-        span {
-          display: inline;
-        }
-      }
+      // h1 {
+      //   span {
+      //     display: inline;
+      //   }
+      // }
       h5 {
         margin: 0;
       }
