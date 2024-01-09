@@ -78,7 +78,7 @@ const PostCase = () => {
         ...formikStep2.values,
         ...formikStep3.values,
       });
-      const responseStatus = await SendGridSubmitCall(data);
+      const responseStatus = await SendGridSubmitCall(data, 'New case posted');
       if (responseStatus) {
         formikStep1.resetForm();
         formikStep2.resetForm();

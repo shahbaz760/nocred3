@@ -2,7 +2,10 @@ import axios from 'axios';
 import { ReactNode } from 'react';
 
 // ======= Get Product list ===================
-export const SendGridSubmitCall = (htmlTemplate: ReactNode) => {
+export const SendGridSubmitCall = (
+  htmlTemplate: ReactNode,
+  subject: string
+) => {
   return axios
     .post(
       'https://api.sendgrid.com/v3/mail/send',
@@ -13,7 +16,7 @@ export const SendGridSubmitCall = (htmlTemplate: ReactNode) => {
         from: {
           email: import.meta.env.VITE_SANDGRID_FROM_EMAIL ?? '',
         },
-        subject: 'Email from Attorney contact Page',
+        subject: subject,
         content: [
           {
             type: 'text/HTML',

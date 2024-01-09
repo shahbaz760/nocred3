@@ -43,7 +43,10 @@ const Contact = () => {
     setLoading(true);
     try {
       const data = contactFormTemplate(values);
-      const responseStatus = await SendGridSubmitCall(data);
+      const responseStatus = await SendGridSubmitCall(
+        data,
+        'New query from contact form'
+      );
       console.log('responseStatus', responseStatus);
 
       if (responseStatus) {
