@@ -9,6 +9,7 @@
     position: relative;
     align-items: center;
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
     @include max($md) {
       flex-direction: column;
@@ -56,25 +57,14 @@
     }
   }
   .banner_img {
-    flex-basis: 45%;
-    text-align: left;
+    flex-basis: 40%;
+    text-align: right;
     img {
-      max-width: none;
-      width: 100%;
-    }
-    @include min($xl) {
-      img {
-        width: calc(100% + 60px);
-        margin-right: -60px;
-      }
+      filter: drop-shadow(10px 10px 30px rgba(#473262, 0.1));
     }
     @include max($md) {
       flex-basis: auto;
       overflow: hidden;
-      img {
-        width: calc(100% + 80px);
-        margin-left: -40px;
-      }
     }
   }
 }

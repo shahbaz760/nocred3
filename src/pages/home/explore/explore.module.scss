@@ -8,7 +8,7 @@
     --gap: 1.5rem;
     display: flex;
     flex-wrap: wrap-reverse;
-    // gap: calc(1.2 * var(--gap)) 0;
+    gap: var(--gap);
     align-items: center;
     justify-content: space-between;
     &:nth-of-type(odd) {
@@ -31,6 +31,9 @@
     --width: 50%;
     flex-basis: var(--width);
     max-width: var(--width);
+    img {
+      filter: drop-shadow(10px 10px 30px rgba(#473262, 0.15));
+    }
     @include max($md) {
       --width: 100%;
       text-align: center;
