@@ -20,7 +20,7 @@ import Header from '../../common/header';
 
 const PostCase = () => {
   const [loading, setLoading] = useState(false);
-  const [activeStep, setActiveStep] = useState(4);
+  const [activeStep, setActiveStep] = useState(1);
 
   const currentDate = new Date();
   const twentyYearsAgo = new Date(currentDate);
