@@ -9,6 +9,11 @@
   min-height: 100vh;
   background-attachment: fixed;
   background-position: center;
+  .horizontal_tabs_wrap {
+    @include max($lg) {
+      margin: var(--spacing-4xl) 0;
+    }
+  }
   .horizontal_tabs {
     padding: var(--spacing-7xl) 0;
     display: flex;
@@ -24,7 +29,6 @@
       @include flexCenter;
     }
     .single_tab {
-      min-width: 60px;
       background-color: #fff;
       border: 1px solid $black6;
       border-radius: 50px;
@@ -32,6 +36,7 @@
       display: flex;
       align-items: center;
       gap: 6px;
+      white-space: nowrap;
       &.active {
         background-color: #f8f2ff;
         color: $primary;
@@ -39,23 +44,26 @@
       }
     }
     @include max($lg) {
-      padding: var(--spacing-4xl) 0;
-      flex-wrap: wrap;
-      gap: 6px;
-      .arrowIcon {
-        // display: none;
-        flex-basis: 100%;
-        aspect-ratio: 0;
-        svg {
-          transform: rotate(90deg);
-        }
-      }
+      overflow-x: auto;
+      justify-content: initial;
+      padding: 10px;
       .single_tab {
-        // width: 100%;
-        // max-width: 260px;
-        justify-content: center;
-        font-size: 12px;
+        padding: 8.5px 18px;
       }
+      //   padding: var(--spacing-4xl) 0;
+      //   flex-wrap: wrap;
+      //   gap: 6px;
+      //   .arrowIcon {
+      //     flex-basis: 100%;
+      //     aspect-ratio: 0;
+      //     svg {
+      //       transform: rotate(90deg);
+      //     }
+      //   }
+      //   .single_tab {
+      //     justify-content: center;
+      //     font-size: 12px;
+      //   }
     }
   }
 }
@@ -67,7 +75,7 @@
   padding: var(--spacing-4xl);
   background-color: #fff;
   > h4 {
-    font-size: var(--f30);
+    font-size: 30px;
     text-align: center;
   }
   .submit_btn_wrap {
@@ -79,14 +87,15 @@
     }
   }
   @include max($md) {
-    padding: var(--spacing-3xl);
+    padding: var(--spacing-4xl);
+    background-color: transparent;
     .submit_btn_wrap {
       gap: var(--spacing-lg);
     }
   }
   @include max($sm) {
     .submit_btn_wrap {
-      flex-wrap: wrap-reverse;
+      flex-wrap: wrap;
       > * {
         flex-basis: 100%;
       }
@@ -121,6 +130,11 @@
 }
 .form_section {
   margin-top: var(--spacing-4xl);
+  @include max($md) {
+    > h5 {
+      text-align: center;
+    }
+  }
   .fields_wrapper {
     --gapX: var(--spacing-xl);
     --gapY: 20px;

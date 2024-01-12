@@ -16,10 +16,11 @@ import styles from './postCase.module.scss';
 import PostCaseStep1 from './steps/step1';
 import PostCaseStep2 from './steps/step2';
 import PostCaseStep3 from './steps/step3';
+import Header from '../../common/header';
 
 const PostCase = () => {
   const [loading, setLoading] = useState(false);
-  const [activeStep, setActiveStep] = useState(1);
+  const [activeStep, setActiveStep] = useState(4);
 
   const currentDate = new Date();
   const twentyYearsAgo = new Date(currentDate);
@@ -102,8 +103,11 @@ const PostCase = () => {
 
   return (
     <div className={styles.post_page}>
-      <Container>
-        <div className={styles.page_wrapper}>
+      <div className={styles.page_wrapper}>
+        <div className='d-lg-none'>
+          <Header />
+        </div>
+        <div className={styles.horizontal_tabs_wrap}>
           <div className={styles.horizontal_tabs}>
             {topTabs.map((item, index) => (
               <React.Fragment key={index}>
@@ -130,7 +134,9 @@ const PostCase = () => {
               </React.Fragment>
             ))}
           </div>
+        </div>
 
+        <Container>
           {activeStep === 1 ? (
             <PostCaseStep1 formik={formikStep1} />
           ) : activeStep === 2 ? (
@@ -155,8 +161,8 @@ const PostCase = () => {
               </Link>
             </div>
           ) : null}
-        </div>
-      </Container>
+        </Container>
+      </div>
     </div>
   );
 };

@@ -23,12 +23,7 @@
     align-items: flex-start;
     gap: var(--spacing-4xl);
     img {
-      height: 52px;
-    }
-    @include max($lg) {
-      img {
-        height: 42px;
-      }
+      height: 40px;
     }
     @include max($sm) {
       text-align: center;
@@ -59,13 +54,20 @@
       flex-direction: column;
       gap: var(--spacing-lg);
       a {
+        font-size: var(--f16);
         font-weight: 500;
-        color: $textColor1;
+        color: $black1;
         text-decoration: none;
       }
     }
     @include max($sm) {
       flex-wrap: wrap;
+      .links_list {
+        text-align: center;
+        a {
+          color: $textColor2;
+        }
+      }
     }
     @include max($xs) {
       --width: 50%;

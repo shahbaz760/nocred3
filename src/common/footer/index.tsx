@@ -1,6 +1,7 @@
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import styles from './footer.module.scss';
+
 const Footer = () => {
   return (
     <footer className={styles.footer}>
@@ -13,31 +14,34 @@ const Footer = () => {
             </div>
             <div className={styles.footer_topLinks}>
               <div className={styles.links_column}>
-                <h6>Product</h6>
+                {/* <h6>Product</h6> */}
                 <div className={styles.links_list}>
-                  <Link to=''>Overview</Link>
+                  <Link to='/'>Home</Link>
+                  {/* <Link to=''>Overview</Link>
                   <Link to=''>Features</Link>
                   <Link to=''>Solutions</Link>
                   <Link to=''>Tutorials</Link>
                   <Link to=''>Pricing</Link>
-                  <Link to=''>Releases</Link>
+                  <Link to=''>Releases</Link> */}
                 </div>
               </div>
               <div className={styles.links_column}>
-                <h6>Company</h6>
+                {/* <h6>Company</h6> */}
                 <div className={styles.links_list}>
-                  <Link to=''>Home</Link>
                   <Link to='/about'>About</Link>
-                  <Link to='/contact'>Contact Us</Link>
+                  {/* <Link to='/'>Home</Link>
+                  <Link to='/about'>About</Link>
+                  <Link to='/contact'>Contact Us</Link> */}
                 </div>
               </div>
               <div className={styles.links_column}>
-                <h6>Legal</h6>
+                {/* <h6>Legal</h6> */}
                 <div className={styles.links_list}>
-                  <Link to=''>Terms</Link>
+                  <Link to='/contact'>Contact Us</Link>
+                  {/* <Link to=''>Terms</Link>
                   <Link to=''>Privacy</Link>
                   <Link to=''>Cookies</Link>
-                  <Link to=''>Licenses</Link>
+                  <Link to=''>Licenses</Link> */}
                 </div>
               </div>
             </div>

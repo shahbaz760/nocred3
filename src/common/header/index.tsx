@@ -1,10 +1,26 @@
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import styles from './header.module.scss';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
+import { ReactNode } from 'react';
 
 interface IProps {
   noContainer?: boolean;
 }
+interface LinkProps {
+  to: string;
+  children: ReactNode;
+}
+
+const LinkRouters = ({ to, children }: LinkProps) => {
+  const location = useLocation();
+  const pathname = location.pathname;
+  return pathname === to ? (
+    // <></>
+    <NavLink to={to}>{children}</NavLink>
+  ) : (
+    <NavLink to={to}>{children}</NavLink>
+  );
+};
 
 const Header = ({ noContainer }: IProps) => {
   return (
@@ -20,9 +36,9 @@ const Header = ({ noContainer }: IProps) => {
           className='justify-content-end'
         >
           <Nav className={styles.navLinks}>
-            <NavLink to='/'>Home</NavLink>
-            <NavLink to='/about'>About</NavLink>
-            <NavLink to='/contact'>Contact Us</NavLink>
+            <LinkRouters to='/'>Home</LinkRouters>
+            <LinkRouters to='/about'>About</LinkRouters>
+            <LinkRouters to='/contact'>Contact Us</LinkRouters>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
