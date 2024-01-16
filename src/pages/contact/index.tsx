@@ -8,7 +8,7 @@ import Footer from '../../common/footer';
 import Header from '../../common/header';
 import { contactFormTemplate } from '../../components/emailTemplates';
 import SectionHeading from '../../components/sectionHeading';
-import { SendGridSubmitCall } from '../../services';
+import { sendGridSubmitCall } from '../../services';
 import CustomButton from '../../theme/button';
 import InputField from '../../theme/input';
 import { contactUsValidationScheme } from '../../validations/validations';
@@ -43,7 +43,7 @@ const Contact = () => {
     setLoading(true);
     try {
       const data = contactFormTemplate(values);
-      const responseStatus = await SendGridSubmitCall(
+      const responseStatus = await sendGridSubmitCall(
         data,
         'New query from contact form'
       );

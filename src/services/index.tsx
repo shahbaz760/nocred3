@@ -2,37 +2,13 @@ import axios from 'axios';
 import { ReactNode } from 'react';
 
 // ======= Get Product list ===================
-export const SendGridSubmitCall = (
-  htmlTemplate: ReactNode,
-  subject: string
-) => {
+export const sendGridSubmitCall = async (html: ReactNode, subject: string) => {
   return axios
-    .post(
-      'https://api.sendgrid.com/v3/mail/send',
-      {
-        personalizations: [
-          { to: [{ email: import.meta.env.VITE_SANDGRID_TO_EMAIL ?? '' }] },
-        ],
-        from: {
-          email: import.meta.env.VITE_SANDGRID_FROM_EMAIL ?? '',
-        },
-        subject: subject,
-        content: [
-          {
-            type: 'text/HTML',
-            value: `${htmlTemplate}`,
-          },
-        ],
-      },
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${
-            import.meta.env.VITE_SENDGRID_API_KEY ?? ''
-          }`,
-        },
-      }
-    )
+    .post(`${import.meta.env.VITE_BACKEND_BASE_URL}/send-email`, {
+      email: import.meta.env.VITE_SANDGRID_TO_EMAIL ?? '',
+      subject,
+      html,
+    })
     .then(function (response) {
       if (
         response.status === 200 ||

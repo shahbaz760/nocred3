@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { toast } from 'sonner';
 import { ArrowRightIcon, CheckCircleFilledIcon } from '../../assets/svg';
 import { postCaseFormTemplate } from '../../components/emailTemplates';
-import { SendGridSubmitCall } from '../../services';
+import { sendGridSubmitCall } from '../../services';
 import CustomButton from '../../theme/button';
 import {
   postCaseValidationStep1,
@@ -79,7 +79,7 @@ const PostCase = () => {
         ...formikStep2.values,
         ...formikStep3.values,
       });
-      const responseStatus = await SendGridSubmitCall(data, 'New case posted');
+      const responseStatus = await sendGridSubmitCall(data, 'New case posted');
       if (responseStatus) {
         formikStep1.resetForm();
         formikStep2.resetForm();
