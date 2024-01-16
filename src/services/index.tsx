@@ -7,7 +7,6 @@ export const sendGridSubmitCall = async (html: ReactNode, subject: string) => {
     .post(
       `${import.meta.env.VITE_BACKEND_BASE_URL}/send-email`,
       {
-        email: import.meta.env.VITE_SANDGRID_TO_EMAIL ?? '',
         subject,
         html,
       },
@@ -21,7 +20,8 @@ export const sendGridSubmitCall = async (html: ReactNode, subject: string) => {
       if (
         response.status === 200 ||
         response.status === 201 ||
-        response.status === 202
+        response.status === 202 ||
+        response.status === 204
       ) {
         return true;
       } else {
