@@ -36,7 +36,8 @@ const Faq = () => {
     },
     {
       heading: "How are attorneys selected for AttorneyShoppe's network?",
-      description: "How are attorneys selected for AttorneyShoppe's network?",
+      description:
+        "Attorneys are selected based on their legal expertise, experience, client reviews, and adherence to our platform's quality standards.",
     },
   ];
   return (

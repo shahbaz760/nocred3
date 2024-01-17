@@ -24,7 +24,9 @@
         border-top: 1px solid $borderColor;
         background-color: transparent;
         position: relative;
-        text-align: center;
+        @include max($md) {
+          text-align: center;
+        }
         :local {
           .toggleIcon {
             z-index: -2;
