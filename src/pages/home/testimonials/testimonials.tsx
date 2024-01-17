@@ -10,20 +10,23 @@ const Testimonials = () => {
         'Amazing! AttorneyShoppe helped me find a stellar lawyer for way less than I expected. Huge relief!',
       name: 'Caitlyn K.',
       designation: 'Head of Design, Layers',
+      img: '/images/home/avatarDummy.png',
       rating: 5,
     },
     {
       heading:
         'After my accident, I was in pain and totally lost. AttorneyShoppe made finding a great, affordable lawyer so easy.',
-      name: 'Caitlyn K.',
+      name: 'Joshua R.',
       designation: 'Head of Design, Layers',
+      img: '/images/home/avatarDummy.png',
       rating: 5,
     },
     {
       heading:
-        'Amazing! AttorneyShoppe helped me find a stellar lawyer for way less than I expected. Huge relief!',
-      name: 'Caitlyn K.',
+        'Navigating the aftermath of my accident was overwhelming, but AttorneyShoppe made finding a quality lawyer incredibly simple.',
+      name: 'Jeric H.',
       designation: 'Head of Design, Layers',
+      img: '/images/home/avatarDummy2.png',
       rating: 5,
     },
   ];
@@ -32,8 +35,8 @@ const Testimonials = () => {
     <div className={styles.testimonials}>
       <Container>
         <SectionHeading
-          heading='Customer testimonials'
-          subHeading='Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+          heading='Customer Testimonials'
+          subHeading='Hear from clients who found their attorney through AttorneyShoppe.'
         />
         <div className={styles.wrapper}>
           {BoxesContent.map((item, index) => (
@@ -41,10 +44,10 @@ const Testimonials = () => {
               <div className={styles.single_box}>
                 <h4>{item.heading}</h4>
                 <div className={styles.profile}>
-                  <img src='/images/home/avatarDummy.png' alt='' />
+                  <img src={item.img} alt='client image' />
                   <div className={styles.name}>
                     <h5>{item.name}</h5>
-                    <p>{item.designation}</p>
+                    {/* <p>{item.designation}</p> */}
                   </div>
                   <div className={styles.rating}>
                     {[...Array(item.rating)].map((_, ratingIndex) => (

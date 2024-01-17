@@ -15,13 +15,13 @@ const HowItWorks = () => {
       image: '/images/home/how_works2.png',
       heading: 'Post the Case',
       subheading:
-        'When posting the case Attorneys see your case and start sending you proposals',
+        'Share your case with our network. Attorneys interested in your case will be notified and have the opportunity to review it. Your case will be made visible to our network of attorneys, ready for their review.',
     },
     {
       image: '/images/home/how_works3.png',
-      heading: 'Wait for Attorneys Call',
+      heading: 'Review Proposals',
       subheading:
-        'Client send a call request to the Attorney, Attorney pays to accept the call request ',
+        'Attorneys will contact you with their proposals, allowing you to compare and choose the best match for your legal needs.',
     },
   ];
   return (

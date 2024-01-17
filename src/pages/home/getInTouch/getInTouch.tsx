@@ -1,6 +1,7 @@
 import { Container } from 'react-bootstrap';
 import CustomButton from '../../../theme/button';
 import styles from './getInTouch.module.scss';
+import { Link } from 'react-router-dom';
 
 const GetInTouch = () => {
   return (
@@ -26,7 +27,9 @@ const GetInTouch = () => {
               friendly team.
             </p>
           </div>
-          <CustomButton>Get in touch</CustomButton>
+          <Link to='/contact'>
+            <CustomButton>Get in Touch</CustomButton>
+          </Link>
         </div>
       </Container>
     </div>

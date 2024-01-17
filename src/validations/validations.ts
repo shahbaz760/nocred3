@@ -5,16 +5,16 @@ export const emailSchema = yup
   .string()
   .trim()
   .required('Email is required')
-  .email('Must be valid email syntax')
-  .matches(emailRegExp, 'Must be valid email syntax');
+  .email('Enter a valid email')
+  .matches(emailRegExp, 'Enter a valid email');
 
 export const phoneSchema = yup
   .string()
   .trim()
-  .required('Phone number is required')
-  .matches(phoneRegExp, 'Must be valid phone number')
-  .min(6, 'Minimum 6 number allowed')
-  .max(16, 'Maximum 16 number allowed');
+  .required('Phone Number is required')
+  .matches(phoneRegExp, 'Enter a valid phone number')
+  .min(6, 'Enter a valid phone number')
+  .max(16, 'Enter a valid phone number');
 
 // const passwordSchema = yup
 //   .string()
@@ -45,7 +45,7 @@ export const yesNoSelect = (message?: string) =>
     .required(message ?? 'This field is required');
 
 export const contactUsValidationScheme = yup.object().shape({
-  first_name: nameSchema('First name is required'),
+  first_name: nameSchema('First Name is required'),
   last_name: nameSchema('Last name is required'),
   email: emailSchema,
   phone: phoneSchema,
@@ -54,14 +54,14 @@ export const contactUsValidationScheme = yup.object().shape({
     .trim()
     .max(800, 'Maximum 800 character allowed')
     .required('Message is required'),
-  accept_terms: yup
-    .boolean()
-    .required('You Must accept policies')
-    .oneOf([true], 'You Must accept policies'),
+  // accept_terms: yup
+  //   .boolean()
+  //   .required('You Must accept policies')
+  //   .oneOf([true], 'You Must accept policies'),
 });
 
 export const postCaseValidationStep1 = yup.object().shape({
-  full_name: nameSchema('First name is required'),
+  full_name: nameSchema('Full Name is required'),
   phone_number: phoneSchema,
   email_address: emailSchema,
   date_birth: dateSchema(),
@@ -96,7 +96,7 @@ export const postCaseValidationStep2 = yup.object().shape({
   insurance_provider: yup.string().trim(),
   policy_number: yup
     .number()
-    .typeError('Only number allowed')
+    .typeError('Enter a valid policy number')
     .required('This field is required'),
 });
 
@@ -104,7 +104,7 @@ export const postCaseValidationStep3 = yup.object().shape({
   company_name: nameSchema(),
   policy_number: yup
     .number()
-    .typeError('Only number allowed')
+    .typeError('Enter a valid policy number')
     .required('This field is required'),
   accident_report: yesNoSelect(),
 });

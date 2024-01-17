@@ -17,6 +17,7 @@ import PostCaseStep1 from './steps/step1';
 import PostCaseStep2 from './steps/step2';
 import PostCaseStep3 from './steps/step3';
 import Header from '../../common/header';
+import PageLayout from '../../layouts/pageLayout/pageLayout';
 
 const PostCase = () => {
   const [loading, setLoading] = useState(false);
@@ -25,6 +26,10 @@ const PostCase = () => {
   const currentDate = new Date();
   const twentyYearsAgo = new Date(currentDate);
   twentyYearsAgo.setFullYear(currentDate.getFullYear() - 30);
+
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
 
   const formikStep1 = useFormik({
     initialValues: {
@@ -39,6 +44,7 @@ const PostCase = () => {
     },
     validationSchema: postCaseValidationStep1,
     onSubmit: () => {
+      scrollToTop();
       setActiveStep(2);
     },
   });
@@ -55,6 +61,7 @@ const PostCase = () => {
     },
     validationSchema: postCaseValidationStep2,
     onSubmit: () => {
+      scrollToTop();
       setActiveStep(3);
     },
   });
@@ -84,8 +91,8 @@ const PostCase = () => {
         formikStep1.resetForm();
         formikStep2.resetForm();
         formikStep3.resetForm();
+        scrollToTop();
         setActiveStep(4);
-        toast.success('Email send successfully');
       } else {
         toast.error('Something went wrong, Please try after sometime');
       }
@@ -102,68 +109,73 @@ const PostCase = () => {
   ];
 
   return (
-    <div className={styles.post_page}>
-      <div className={styles.page_wrapper}>
-        <div className='d-lg-none'>
-          <Header />
-        </div>
-        <div className={styles.horizontal_tabs_wrap}>
-          <div className={styles.horizontal_tabs}>
-            {topTabs.map((item, index) => (
-              <React.Fragment key={index}>
-                <span
-                  className={`${styles.single_tab} ${
-                    index < activeStep ? styles.active : ''
-                  }`}
-                  key={index}
-                >
-                  <span>
-                    {index + 1 < activeStep ? (
-                      <CheckCircleFilledIcon />
-                    ) : (
-                      `${index + 1}.`
-                    )}
-                  </span>
-                  {item.title}
-                </span>
-                {topTabs.length > index + 1 ? (
-                  <span className={styles.arrowIcon}>
-                    <ArrowRightIcon />
-                  </span>
-                ) : null}
-              </React.Fragment>
-            ))}
+    <PageLayout>
+      <div className={styles.post_page}>
+        <div className={styles.page_wrapper}>
+          <div className='d-lg-none'>
+            <Header />
           </div>
-        </div>
-
-        <Container>
-          {activeStep === 1 ? (
-            <PostCaseStep1 formik={formikStep1} />
-          ) : activeStep === 2 ? (
-            <PostCaseStep2 formik={formikStep2} setActiveStep={setActiveStep} />
-          ) : activeStep === 3 ? (
-            <PostCaseStep3
-              formik={formikStep3}
-              setActiveStep={setActiveStep}
-              loading={loading}
-            />
-          ) : activeStep === 4 ? (
-            <div className={styles.complete_view}>
-              <CheckCircleFilledIcon />
-              <div className={styles.text_content}>
-                <h4>Congratulations!</h4>
-                <h5>You've Successfully Completed Intake Form</h5>
-              </div>
-              <Link to='/' replace>
-                <CustomButton className={styles.goHome_btn}>
-                  Go To Home
-                </CustomButton>
-              </Link>
+          <div className={styles.horizontal_tabs_wrap}>
+            <div className={styles.horizontal_tabs}>
+              {topTabs.map((item, index) => (
+                <React.Fragment key={index}>
+                  <span
+                    className={`${styles.single_tab} ${
+                      index < activeStep ? styles.active : ''
+                    }`}
+                    key={index}
+                  >
+                    <span>
+                      {index + 1 < activeStep ? (
+                        <CheckCircleFilledIcon />
+                      ) : (
+                        `${index + 1}.`
+                      )}
+                    </span>
+                    {item.title}
+                  </span>
+                  {topTabs.length > index + 1 ? (
+                    <span className={styles.arrowIcon}>
+                      <ArrowRightIcon />
+                    </span>
+                  ) : null}
+                </React.Fragment>
+              ))}
             </div>
-          ) : null}
-        </Container>
+          </div>
+
+          <Container>
+            {activeStep === 1 ? (
+              <PostCaseStep1 formik={formikStep1} />
+            ) : activeStep === 2 ? (
+              <PostCaseStep2
+                formik={formikStep2}
+                setActiveStep={setActiveStep}
+              />
+            ) : activeStep === 3 ? (
+              <PostCaseStep3
+                formik={formikStep3}
+                setActiveStep={setActiveStep}
+                loading={loading}
+              />
+            ) : activeStep === 4 ? (
+              <div className={styles.complete_view}>
+                <CheckCircleFilledIcon />
+                <div className={styles.text_content}>
+                  <h4>Congratulations!</h4>
+                  <h5>You've Successfully Completed Intake Form</h5>
+                </div>
+                <Link to='/' replace>
+                  <CustomButton className={styles.goHome_btn}>
+                    Go To Home
+                  </CustomButton>
+                </Link>
+              </div>
+            ) : null}
+          </Container>
+        </div>
       </div>
-    </div>
+    </PageLayout>
   );
 };
 

@@ -5,13 +5,13 @@ import CheckEmail from './pages/authentication/check-email';
 import ForgotPassword from './pages/authentication/forgot-password';
 import Login from './pages/authentication/login';
 import PassResetComplete from './pages/authentication/reset-complete';
+import ResetPassword from './pages/authentication/reset-password';
 import SignUp from './pages/authentication/signup';
 import Contact from './pages/contact';
 import Home from './pages/home';
 import NotFound from './pages/not-found';
 import PostCase from './pages/post-case';
 import './styles/App.scss';
-import ResetPassword from './pages/authentication/reset-password';
 
 function App() {
   return (

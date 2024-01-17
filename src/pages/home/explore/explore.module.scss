@@ -8,27 +8,30 @@
     --gap: 1.5rem;
     display: flex;
     flex-wrap: wrap-reverse;
-    gap: var(--gap);
+    // gap: var(--gap);
     align-items: center;
     justify-content: space-between;
     &:nth-of-type(odd) {
       .contentPart {
+        padding-left: var(--gap);
         padding-right: var(--container-padding-desktop);
       }
     }
     &:nth-of-type(even) {
       flex-direction: row-reverse;
       .contentPart {
+        padding-right: var(--gap);
         padding-left: var(--container-padding-desktop);
       }
     }
     @include max($md) {
+      --gap: 0;
       padding-top: var(--spacing-6xl);
       gap: 1rem;
     }
   }
   .imagePart {
-    --width: 50%;
+    --width: 45%;
     flex-basis: var(--width);
     max-width: var(--width);
     img {
@@ -44,12 +47,13 @@
     }
   }
   .contentPart {
-    --width: 50%;
+    --width: 55%;
     flex-basis: var(--width);
-    max-width: 530px;
+    max-width: calc(580px + var(--gap));
     p {
       margin-top: var(--spacing-xl);
       color: $black2;
+      font-size: var(--f18);
     }
     .icon {
       width: 48px;

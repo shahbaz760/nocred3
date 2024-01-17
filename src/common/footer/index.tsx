@@ -10,7 +10,7 @@ const Footer = () => {
           <div className={styles.footer_top}>
             <div className={styles.footer_topLeft}>
               <img src='/images/logo.svg' alt='logo' />
-              <p>We connect Attorneys with Clients.</p>
+              {/* <p>We connect Attorneys with Clients.</p> */}
             </div>
             <div className={styles.footer_topLinks}>
               <div className={styles.links_column}>

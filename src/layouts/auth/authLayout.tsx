@@ -1,6 +1,7 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import styles from './authLayout.module.scss';
+import { useLocation } from 'react-router-dom';
 
 interface IProps {
   children: React.ReactNode;
@@ -15,6 +16,14 @@ const AuthenticationLayout: React.FC<IProps> = ({
   subheading,
   icon,
 }) => {
+  const location = useLocation();
+
+  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 0);
+  }, [location.pathname]);
+
   return (
     <div className={styles.layout}>
       <Container>

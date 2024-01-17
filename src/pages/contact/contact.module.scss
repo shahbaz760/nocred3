@@ -61,10 +61,20 @@
   a {
     text-decoration: none;
   }
+  @include min($md) {
+    p {
+      min-height: 50px;
+    }
+  }
   @include max($md) {
     text-align: center;
     .icon {
       margin: auto;
+    }
+    p {
+      br {
+        display: none;
+      }
     }
   }
 }

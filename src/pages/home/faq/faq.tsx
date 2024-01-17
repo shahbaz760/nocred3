@@ -12,35 +12,31 @@ const Faq = () => {
 
   const FaqList = [
     {
-      heading: 'How does the attorney hiring process work?',
+      heading:
+        'How soon can I expect to hear from attorneys after submitting the intake form?',
       description:
-        'Log in to the platform, upload documentations needed and fill out the Intake form with the case background, post the case and wait for the attorneys to send you proposals.',
-    },
-    {
-      heading: 'What types of legal cases do the attorneys on the platform?',
-      description:
-        'Log in to the platform, upload documentations needed and fill out the Intake form with the case background, post the case and wait for the attorneys to send you proposals.',
-    },
-    {
-      heading: 'How can clients find the right attorney for specific needs?',
-      description:
-        'Log in to the platform, upload documentations needed and fill out the Intake form with the case background, post the case and wait for the attorneys to send you proposals.',
+        'After submitting your intake form on AttorneyShoppe, you can typically expect to start receiving responses from attorneys within an hour, and at the latest, within 24 hours.',
     },
     {
       heading:
-        'What information should clients provide when submitting a case?',
+        'What are the advantages of using AttorneyShoppe compared to directly approaching attorneys?',
       description:
-        'Log in to the platform, upload documentations needed and fill out the Intake form with the case background, post the case and wait for the attorneys to send you proposals.',
+        'AttorneyShoppe simplifies the process of finding legal help by providing a single, comprehensive intake form that reaches a wide network of attorneys. This approach encourages competitive bids, which could potentially result in lower contingency fees and better terms for you, while saving the time and effort of consulting multiple attorneys individually.',
     },
     {
-      heading: 'Are consultations with attorneys free of charge?',
+      heading:
+        "What should I do if I'm not satisfied with the offers I receive?",
       description:
-        'Log in to the platform, upload documentations needed and fill out the Intake form with the case background, post the case and wait for the attorneys to send you proposals.',
+        "If you're not satisfied with the initial offers, you can request more. Our aim is to ensure that you find the right attorney for your case, and we are committed to providing you with as many options as necessary.",
     },
     {
-      heading: 'Can clients read reviews or testimonials about the attorneys?',
+      heading: 'Is there a fee for using AttorneyShoppe to find an attorney?',
       description:
-        'Log in to the platform, upload documentations needed and fill out the Intake form with the case background, post the case and wait for the attorneys to send you proposals.',
+        'No, there is no fee for clients to use AttorneyShoppe. Our platform is designed to connect you with attorneys free of charge.',
+    },
+    {
+      heading: "How are attorneys selected for AttorneyShoppe's network?",
+      description: "How are attorneys selected for AttorneyShoppe's network?",
     },
   ];
   return (
@@ -48,7 +44,7 @@ const Faq = () => {
       <Container>
         <SectionHeading
           heading='Frequently asked questions'
-          subHeading='Everything you need to know about the Attorney Shoppe'
+          subHeading='Your guide to navigating AttorneyShoppe.'
         />
         <div className={styles.wrapper}>
           <Accordion
