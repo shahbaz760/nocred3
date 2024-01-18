@@ -21,7 +21,7 @@ import PageLayout from '../../layouts/pageLayout/pageLayout';
 
 const PostCase = () => {
   const [loading, setLoading] = useState(false);
-  const [activeStep, setActiveStep] = useState(3);
+  const [activeStep, setActiveStep] = useState(1);
 
   const currentDate = new Date();
   const twentyYearsAgo = new Date(currentDate);
@@ -74,8 +74,7 @@ const PostCase = () => {
     },
     validationSchema: postCaseValidationStep3,
     onSubmit: () => {
-      // if (!loading) handleSubmit();
-      setActiveStep(4);
+      if (!loading) handleSubmit();
     },
   });
 
