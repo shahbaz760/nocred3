@@ -9,7 +9,7 @@ const HowItWorks = () => {
       image: '/images/home/how_works1.png',
       heading: 'Fill out the Intake Form',
       subheading:
-        'Upload any necessary documents, fill out the case background, and let us take it from there.',
+        'Upload any necessary documents, fill out the case background.',
     },
     {
       image: '/images/home/how_works2.png',

@@ -40,9 +40,9 @@ const PostCaseStep2: React.FC<IProps> = ({ formik, setActiveStep }) => {
           </div>
           <div>
             <InputField
-              label='Provide the first medical treatment'
+              label='Location of first medical treatment'
               formik={formik}
-              placeholder='Urgent Care'
+              placeholder='US'
               name='first_medical'
             />
           </div>
@@ -93,7 +93,7 @@ const PostCaseStep2: React.FC<IProps> = ({ formik, setActiveStep }) => {
           </div>
           <div>
             <InputField
-              label='Policy number'
+              label='Policy number (Optional)'
               formik={formik}
               placeholder='Number'
               name='policy_number'

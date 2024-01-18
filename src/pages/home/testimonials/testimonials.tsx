@@ -15,10 +15,10 @@ const Testimonials = () => {
     },
     {
       heading:
-        'After my accident, I was in pain and totally lost. AttorneyShoppe made finding a great, affordable lawyer so easy.',
+        'After my accident, I was in pain and overwhelmed. AttorneyShoppe made finding a lawyer easy',
       name: 'Joshua R.',
       designation: 'Head of Design, Layers',
-      img: '/images/home/avatarDummy.png',
+      img: '/images/home/avatarDummy2.png',
       rating: 5,
     },
     {
@@ -26,7 +26,7 @@ const Testimonials = () => {
         'Navigating the aftermath of my accident was overwhelming, but AttorneyShoppe made finding a quality lawyer incredibly simple.',
       name: 'Jeric H.',
       designation: 'Head of Design, Layers',
-      img: '/images/home/avatarDummy2.png',
+      img: '/images/home/avatarDummy3.png',
       rating: 5,
     },
   ];

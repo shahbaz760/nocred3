@@ -31,11 +31,10 @@
       .profile {
         padding-top: var(--spacing-4xl);
         img {
-          width: 62px;
+          max-width: 66px;
           aspect-ratio: 1;
-          border: 1px solid $borderColor;
+          // border: 1px solid $borderColor;
           border-radius: 50%;
-          object-fit: cover;
         }
         .name {
           margin: var(--spacing-xl) 0;

@@ -22,10 +22,7 @@ const GetInTouch = () => {
           </div>
           <div className={styles.content}>
             <h5>Still have questions?</h5>
-            <p>
-              Can't find the answer you're looking for? Please chat to our
-              friendly team.
-            </p>
+            <p>Can't find the answer your looking for? Chat with our team.</p>
           </div>
           <Link to='/contact'>
             <CustomButton>Get in Touch</CustomButton>

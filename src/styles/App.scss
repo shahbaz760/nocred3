@@ -141,6 +141,9 @@ body {
       padding: var(--spacing-xl) var(--spacing-lg);
     }
   }
+  .react-datepicker__day--outside-month {
+    color: $textColor2;
+  }
   .react-datepicker-wrapper {
     display: block;
     .react-datepicker__input-container {
@@ -193,6 +196,10 @@ body {
     @include max($sm) {
       width: 34px;
     }
+  }
+
+  .react-datepicker__day-name {
+    color: #000;
   }
   .react-datepicker__day--selected {
     background-color: $primary;

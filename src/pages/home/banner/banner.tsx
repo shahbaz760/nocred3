@@ -8,7 +8,7 @@ const Banner = () => {
       <div className={styles.wrapper}>
         <div className={styles.banner_content}>
           <h1>
-            With One Intake Form, <span>Let Lawyers Shop</span> for Your Case
+            With One Intake Form <span>Let Lawyers Shop</span> for Your Case
           </h1>
           <h5>
             Skip the hassle and uncertainty. Fill out just one intake form and

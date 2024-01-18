@@ -52,7 +52,7 @@ const PostCaseStep1: React.FC<IProps> = ({ formik }) => {
         </div>
       </div>
       <div className={styles.form_section}>
-        <h5>Client's Personal Details</h5>
+        <h5>Accident Information</h5>
         <div className={styles.fields_wrapper}>
           <div className={styles.md6}>
             <DateField

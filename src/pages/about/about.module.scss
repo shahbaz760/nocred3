@@ -14,6 +14,7 @@
     padding: var(--spacing-9xl) var(--container-padding-desktop);
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: var(--spacing-7xl);
     @include max($lg) {
       gap: var(--spacing-6xl);
@@ -23,16 +24,20 @@
   }
   .content {
     flex-grow: 1;
-    flex-basis: var(--width);
+    @include min($lg) {
+      max-width: 576px;
+    }
     h4 {
       margin-top: var(--spacing-lg);
       margin-bottom: var(--spacing-6xl);
     }
     p {
+      color: $textColor1;
+      font-weight: 500;
       line-height: 1.55;
       font-size: var(--f18);
       &:not(:last-child) {
-        margin-bottom: var(--spacing-3xl);
+        margin-bottom: var(--spacing-lg);
       }
     }
     @include max($xl) {
@@ -41,9 +46,6 @@
       }
       p {
         font-size: 1rem;
-        &:not(:last-child) {
-          margin-bottom: var(--spacing-2xl);
-        }
       }
     }
     @include max($md) {
