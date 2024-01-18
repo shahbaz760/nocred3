@@ -98,10 +98,7 @@ export const postCaseValidationStep2 = yup.object().shape({
 });
 
 export const postCaseValidationStep3 = yup.object().shape({
-  company_name: nameSchema(),
-  policy_number: yup
-    .number()
-    .typeError('Enter a valid policy number')
-    .required('This field is required'),
+  company_name: yup.string().trim().max(24, 'Maximum 24 character'),
+  policy_number: yup.number().typeError('Enter a valid policy number'),
   accident_report: yesNoSelect(),
 });

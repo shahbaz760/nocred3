@@ -85,7 +85,7 @@ const PostCaseStep2: React.FC<IProps> = ({ formik, setActiveStep }) => {
         <div className={styles.fields_wrapper}>
           <div>
             <InputField
-              label='Auto Insurance provider (if applicable)'
+              label='Auto Insurance provider (Optional)'
               formik={formik}
               placeholder='Auto insurance'
               name='insurance_provider'

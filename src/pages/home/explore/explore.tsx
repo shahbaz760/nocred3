@@ -9,7 +9,7 @@ const ExplorePlatform = () => {
       image: '/images/home/explore1.svg',
       heading: 'Save and Compare',
       description:
-        "We're committed to ensuring you get the most reasonable legal rates available. Tap into our network of top attorneys who offer competitive contingency fees, meaning they only get paid if you win your case. We foster a competitive environment that drives down attorney fees, reducing a typical 33% rate to on average of 27% post settlement",
+        "We're committed to ensuring you get the most reasonable legal rates available. Tap into our network of top attorneys who offer competitive contingency fees, meaning they only get paid if you win your case. We foster a competitive environment that drives down attorney fees, reducing a typical 33% rate to on average of 27% post settlement.",
       icon: <ExploreIcon1 />,
     },
     {

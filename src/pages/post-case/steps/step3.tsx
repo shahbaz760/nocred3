@@ -24,7 +24,7 @@ const PostCaseStep3: React.FC<IProps> = ({
         <div className={styles.fields_wrapper}>
           <div>
             <InputField
-              label='Insurance company name'
+              label='Insurance company name (Optional)'
               formik={formik}
               placeholder='Name'
               name='company_name'
@@ -32,7 +32,7 @@ const PostCaseStep3: React.FC<IProps> = ({
           </div>
           <div>
             <InputField
-              label='Policy number'
+              label='Policy number (Optional)'
               formik={formik}
               placeholder='Number'
               name='policy_number'
