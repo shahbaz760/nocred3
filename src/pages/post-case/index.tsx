@@ -163,7 +163,7 @@ const PostCase = () => {
                 <CheckCircleFilledIcon />
                 <div className={styles.text_content}>
                   <h4>Congratulations!</h4>
-                  <h5>You've Successfully Completed Intake Form</h5>
+                  <h5>You've Successfully Completed the Intake Form.</h5>
                 </div>
                 <Link to='/' replace>
                   <CustomButton className={styles.goHome_btn}>

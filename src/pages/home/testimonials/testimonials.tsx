@@ -23,7 +23,7 @@ const Testimonials = () => {
     },
     {
       heading:
-        'Navigating the aftermath of my accident was overwhelming, but AttorneyShoppe made finding a quality lawyer incredibly simple.',
+        'Attorneys will contact you with their proposals, allowing you to compare and choose the best match for your legal needs.',
       name: 'Jeric H.',
       designation: 'Head of Design, Layers',
       img: '/images/home/avatarDummy3.png',
