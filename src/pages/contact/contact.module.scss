@@ -1,9 +1,7 @@
 @import 'src/styles/var';
 
 .top_section {
-  background-image: url('/images/contact/bg_pattern.png'),
-    linear-gradient(0deg, rgba(white, 0.7), rgba(white, 0.3));
-  background-blend-mode: overlay;
+  background-image: url('/images/contact/bg_pattern.svg');
   background-position: top;
   @include max($md) {
     background-size: 200%;

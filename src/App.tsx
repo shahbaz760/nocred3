@@ -20,13 +20,13 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
+        <Route path='/post-case' element={<PostCase />} />
         <Route path='/register' element={<SignUp />} />
         <Route path='/login' element={<Login />} />
         <Route path='/forgot-password' element={<ForgotPassword />} />
         <Route path='/check-email' element={<CheckEmail />} />
         <Route path='/password-reset-success' element={<PassResetComplete />} />
         <Route path='/reset-password' element={<ResetPassword />} />
-        <Route path='/post-case' element={<PostCase />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </BrowserRouter>
