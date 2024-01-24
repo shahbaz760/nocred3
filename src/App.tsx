@@ -12,6 +12,7 @@ import Home from './pages/home';
 import NotFound from './pages/not-found';
 import PostCase from './pages/post-case';
 import './styles/App.scss';
+import ThankYou from './pages/post-case/thank you';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/post-case' element={<PostCase />} />
+        <Route path='/thank-you' element={<ThankYou />} />
         <Route path='/register' element={<SignUp />} />
         <Route path='/login' element={<Login />} />
         <Route path='/forgot-password' element={<ForgotPassword />} />

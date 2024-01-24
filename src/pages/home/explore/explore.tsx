@@ -6,14 +6,14 @@ import styles from './explore.module.scss';
 const ExplorePlatform = () => {
   const BoxesList = [
     {
-      image: '/images/home/explore1.svg',
+      image: '/images/home/explore.svg',
       heading: 'Save and Compare',
       description:
         "We're committed to ensuring you get the most reasonable legal rates available. Tap into our network of top attorneys who offer competitive contingency fees, meaning they only get paid if you win your case. We foster a competitive environment that drives down attorney fees, reducing a typical 33% rate to on average of 27% post settlement.",
       icon: <ExploreIcon1 />,
     },
     {
-      image: '/images/home/explore2.svg',
+      image: '/images/home/explore_legal.svg',
       heading: 'Transparent Legal Aid',
       description:
         "We're dedicated to guiding you transparently through your legal journey, from demystifying the settlement process to seamlessly connecting you with the right attorney. Our commitment to clarity ensures that you're fully informed at every step.",

@@ -1,12 +1,12 @@
 import { useFormik } from 'formik';
 import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
 import { ArrowRightIcon, CheckCircleFilledIcon } from '../../assets/svg';
 import { postCaseFormTemplate } from '../../components/emailTemplates';
 import { sendGridSubmitCall } from '../../services';
-import CustomButton from '../../theme/button';
+// import CustomButton from '../../theme/button';
 import {
   postCaseValidationStep1,
   postCaseValidationStep2,
@@ -66,6 +66,7 @@ const PostCase = () => {
     },
   });
 
+  const navigate = useNavigate();
   const formikStep3 = useFormik({
     initialValues: {
       company_name: '',
@@ -92,7 +93,8 @@ const PostCase = () => {
         formikStep2.resetForm();
         formikStep3.resetForm();
         scrollToTop();
-        setActiveStep(4);
+        navigate('/thank-you');
+        // setActiveStep(4);
       } else {
         toast.error('Something went wrong, Please try after sometime');
       }
@@ -158,19 +160,6 @@ const PostCase = () => {
                 setActiveStep={setActiveStep}
                 loading={loading}
               />
-            ) : activeStep === 4 ? (
-              <div className={styles.complete_view}>
-                <CheckCircleFilledIcon />
-                <div className={styles.text_content}>
-                  <h4>Congratulations!</h4>
-                  <h5>You've Successfully Completed the Intake Form.</h5>
-                </div>
-                <Link to='/' replace>
-                  <CustomButton className={styles.goHome_btn}>
-                    Go To Home
-                  </CustomButton>
-                </Link>
-              </div>
             ) : null}
           </Container>
         </div>
