@@ -3,6 +3,7 @@ import CustomButton from "../../../theme/button";
 import DateField from "../../../theme/date_input";
 import InputField from "../../../theme/input";
 import styles from "../postCase.module.scss";
+import SelectField from "../../../theme/select_input";
 
 interface IProps {
   formik: FormikProps<any>;
@@ -21,6 +22,7 @@ const PostCaseStep1: React.FC<IProps> = ({ formik }) => {
               formik={formik}
               placeholder="Name"
               name="full_name"
+              isRequired
             />
           </div>
           <div className={styles.md6}>
@@ -29,6 +31,7 @@ const PostCaseStep1: React.FC<IProps> = ({ formik }) => {
               formik={formik}
               placeholder="Phone"
               name="phone_number"
+              isRequired
             />
           </div>
           <div className={styles.md6}>
@@ -37,16 +40,24 @@ const PostCaseStep1: React.FC<IProps> = ({ formik }) => {
               formik={formik}
               placeholder="Email"
               name="email_address"
+              isRequired
             />
           </div>
           <div className={styles.md6}>
-            <InputField
-              formik={formik}
-              label="Date of birth"
-              name="date_birth"
-              type="number"
-              placeholder="DOB"
-            />
+            <div className={styles.field_wrap}>
+              <label htmlFor="age">Age</label>
+              <br />
+
+              <SelectField
+                formik={formik}
+                name="age"
+                optionList={Array.from(
+                  { length: 109 },
+                  (_, index) => index + 12
+                ).map((item) => ({ label: item, value: item }))}
+                isRequired
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -79,6 +90,7 @@ const PostCaseStep1: React.FC<IProps> = ({ formik }) => {
               formik={formik}
               placeholder="Enter a description..."
               name="description_accident"
+              isRequired
             />
           </div>
           <div>

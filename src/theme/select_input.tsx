@@ -1,29 +1,33 @@
-import { FormikProps } from 'formik';
-import { ReactNode } from 'react';
-import { Form, FormSelectProps } from 'react-bootstrap';
+import { FormikProps } from "formik";
+import { ReactNode } from "react";
+import { Form, FormSelectProps } from "react-bootstrap";
 
 interface IProps extends FormSelectProps {
   name: string;
   label?: string;
   formik?: FormikProps<any>;
   children?: ReactNode;
+  isRequired?: boolean;
+
   optionList?: { label: string | number; value: string | number }[];
 }
 
 const SelectField: React.FC<
   IProps & React.SelectHTMLAttributes<HTMLSelectElement>
-> = ({ name, formik, label, optionList, children, ...rest }) => {
+> = ({ name, formik, label, optionList, isRequired, children, ...rest }) => {
   const formikValue = formik?.values[name];
   const formikError = formik?.touched[name] ? formik?.errors[name] : null;
 
   return (
     <Form.Group className={`field_wrap ${rest.className}`} controlId={name}>
-      {label ? <Form.Label>{label}</Form.Label> : null}
+      {label ? (
+        <Form.Label id={isRequired ? "requiredLabel" : ""}>{label}</Form.Label>
+      ) : null}
       <Form.Select
-        aria-label='Default select example'
+        aria-label="Default select example"
         value={formikValue}
         onChange={formik ? (e) => formik?.handleChange(e) : () => {}}
-        className={`${formikError ? 'has_error' : ''}`}
+        className={`${formikError ? "has_error" : ""}`}
       >
         {children ? (
           children
@@ -43,8 +47,8 @@ const SelectField: React.FC<
         )}
       </Form.Select>
       {formikError ? (
-        <span className='error'>
-          {typeof formikError === 'string' ? formikError : ''}
+        <span className="error">
+          {typeof formikError === "string" ? formikError : ""}
         </span>
       ) : null}
     </Form.Group>

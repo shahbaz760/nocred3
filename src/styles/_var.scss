@@ -11,7 +11,7 @@ $heading_color: #101828;
 $bg_grey: #f9fafb;
 $textWhite: #ffffff;
 $textSecondary: #344054;
-
+$red: red;
 $inputBorder: #d0d5dd;
 $borderColor: #eaecf0;
 // ============ breakPoints ==========
@@ -24,17 +24,17 @@ $sm: 575;
 $xs: 375;
 
 @mixin min($value) {
-  @media screen and (min-width: (($value + 1)+ 'px')) {
+  @media screen and (min-width: (($value + 1)+ "px")) {
     @content;
   }
 }
 @mixin max($value) {
-  @media screen and (max-width: ($value + 'px')) {
+  @media screen and (max-width: ($value + "px")) {
     @content;
   }
 }
 @mixin minMax($min, $max) {
-  @media (min-width: ($min + 'px')) and (max-width: ($max + 'px')) {
+  @media (min-width: ($min + "px")) and (max-width: ($max + "px")) {
     @content;
   }
 }

@@ -36,7 +36,7 @@ const PostCase = () => {
       full_name: "",
       phone_number: "",
       email_address: "",
-      date_birth: "",
+      age: "",
       date_accident: currentDate,
       location_accident: "",
       description_accident: "",

@@ -1,9 +1,9 @@
-import { FormikProps } from 'formik';
-import CustomButton from '../../../theme/button';
-import InputField from '../../../theme/input';
-import SelectField from '../../../theme/select_input';
-import styles from '../postCase.module.scss';
-import { Dispatch, SetStateAction } from 'react';
+import { FormikProps } from "formik";
+import CustomButton from "../../../theme/button";
+import InputField from "../../../theme/input";
+import SelectField from "../../../theme/select_input";
+import styles from "../postCase.module.scss";
+import { Dispatch, SetStateAction } from "react";
 
 interface IProps {
   formik: FormikProps<any>;
@@ -24,18 +24,18 @@ const PostCaseStep3: React.FC<IProps> = ({
         <div className={styles.fields_wrapper}>
           <div>
             <InputField
-              label='Insurance company name (Optional)'
+              label="Insurance company name (Optional)"
               formik={formik}
-              placeholder='Name'
-              name='company_name'
+              placeholder="Name"
+              name="company_name"
             />
           </div>
           <div>
             <InputField
-              label='Policy number (Optional)'
+              label="Policy number (Optional)"
               formik={formik}
-              placeholder='Number'
-              name='policy_number'
+              placeholder="Number"
+              name="policy_number"
             />
           </div>
         </div>
@@ -45,20 +45,21 @@ const PostCaseStep3: React.FC<IProps> = ({
         <div className={styles.fields_wrapper}>
           <div>
             <SelectField
-              label='Was an official accident report filled'
+              label="Was an official accident report filled"
               formik={formik}
-              name='accident_report'
+              name="accident_report"
               optionList={[
-                { label: 'Yes', value: 'yes' },
-                { label: 'No', value: 'no' },
+                { label: "Yes", value: "yes" },
+                { label: "No", value: "no" },
               ]}
+              isRequired
             />
           </div>
         </div>
       </div>
       <div className={styles.submit_btn_wrap}>
         <CustomButton
-          variant='outline-primary'
+          variant="outline-primary"
           onClick={() => setActiveStep((prev) => prev - 1)}
         >
           Cancel

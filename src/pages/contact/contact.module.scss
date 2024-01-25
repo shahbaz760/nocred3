@@ -1,7 +1,7 @@
-@import 'src/styles/var';
+@import "src/styles/var";
 
 .top_section {
-  background-image: url('/images/contact/bg_pattern.svg');
+  background-image: url("/images/contact/Contact Us.svg");
   background-position: top;
   @include max($md) {
     background-size: 200%;

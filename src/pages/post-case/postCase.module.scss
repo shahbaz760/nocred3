@@ -1,10 +1,10 @@
-@import 'src/styles/var';
+@import "src/styles/var";
 
 .post_page {
   padding-bottom: var(--spacing-9xl);
 }
 .page_wrapper {
-  background-image: url('/images/postCase/dots_pattern.png');
+  background-image: url("/images/postCase/Intake Form.svg");
   //   background-size: cover;
   min-height: 100vh;
   background-attachment: fixed;
@@ -152,4 +152,22 @@
       padding: 0 var(--gapX);
     }
   }
+}
+.field_wrap label {
+  font-size: var(--f14);
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #344054;
+}
+.field_wrap select {
+  box-shadow: none;
+  border-color: #d0d5dd;
+  border-radius: 8px;
+  min-height: 44px;
+  padding: 8px 14px;
+  line-height: 1.25;
+  color: #101828;
+  resize: none;
+  width: 100%;
+  background-color: transparent;
 }

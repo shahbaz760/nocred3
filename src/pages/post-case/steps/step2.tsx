@@ -1,9 +1,9 @@
-import { FormikProps } from 'formik';
-import CustomButton from '../../../theme/button';
-import InputField from '../../../theme/input';
-import SelectField from '../../../theme/select_input';
-import styles from '../postCase.module.scss';
-import { Dispatch, SetStateAction } from 'react';
+import { FormikProps } from "formik";
+import CustomButton from "../../../theme/button";
+import InputField from "../../../theme/input";
+import SelectField from "../../../theme/select_input";
+import styles from "../postCase.module.scss";
+import { Dispatch, SetStateAction } from "react";
 
 interface IProps {
   formik: FormikProps<any>;
@@ -19,63 +19,66 @@ const PostCaseStep2: React.FC<IProps> = ({ formik, setActiveStep }) => {
         <div className={styles.fields_wrapper}>
           <div>
             <InputField
-              label='Describe the injuries you sustained'
-              as='textarea'
+              label="Describe the injuries you sustained"
+              as="textarea"
               rows={6}
               formik={formik}
-              placeholder='Enter a description...'
-              name='injury_description'
+              placeholder="Enter a description..."
+              name="injury_description"
+              isRequired
             />
           </div>
           <div>
             <SelectField
-              label='Did you seek medical attention'
+              label="Did you seek medical attention"
               formik={formik}
-              name='medical_attention'
+              name="medical_attention"
               optionList={[
-                { label: 'Yes', value: 'yes' },
-                { label: 'No', value: 'no' },
+                { label: "Yes", value: "yes" },
+                { label: "No", value: "no" },
               ]}
             />
           </div>
           <div>
             <InputField
-              label='Location of first medical treatment'
+              label="Location of first medical treatment"
               formik={formik}
-              placeholder='US'
-              name='first_medical'
+              placeholder="US"
+              name="first_medical"
+              isRequired
             />
           </div>
           <div>
             <SelectField
-              label='Vehicle and property damage (if applicable)'
+              label="Vehicle and property damage (if applicable)"
               formik={formik}
-              name='damage_property'
+              name="damage_property"
               optionList={[
-                { label: 'Yes', value: 'yes' },
-                { label: 'No', value: 'no' },
+                { label: "Yes", value: "yes" },
+                { label: "No", value: "no" },
               ]}
+              isRequired
             />
           </div>
           <div>
             <SelectField
-              label='Seat Belt on'
+              label="Seat Belt on"
               formik={formik}
-              name='seat_belt'
+              name="seat_belt"
               optionList={[
-                { label: 'Yes', value: 'yes' },
-                { label: 'No', value: 'no' },
+                { label: "Yes", value: "yes" },
+                { label: "No", value: "no" },
               ]}
             />
           </div>
           <div>
             <InputField
-              label='Briefly describe the damage'
-              as='textarea'
+              label="Briefly describe the damage"
+              as="textarea"
               rows={6}
               formik={formik}
-              placeholder='Enter a description...'
-              name='damage_description'
+              placeholder="Enter a description..."
+              name="damage_description"
             />
           </div>
         </div>
@@ -85,25 +88,25 @@ const PostCaseStep2: React.FC<IProps> = ({ formik, setActiveStep }) => {
         <div className={styles.fields_wrapper}>
           <div>
             <InputField
-              label='Auto Insurance provider (Optional)'
+              label="Auto Insurance provider (Optional)"
               formik={formik}
-              placeholder='Auto insurance'
-              name='insurance_provider'
+              placeholder="Auto insurance"
+              name="insurance_provider"
             />
           </div>
           <div>
             <InputField
-              label='Policy number (Optional)'
+              label="Policy number (Optional)"
               formik={formik}
-              placeholder='Number'
-              name='policy_number'
+              placeholder="Number"
+              name="policy_number"
             />
           </div>
         </div>
       </div>
       <div className={styles.submit_btn_wrap}>
         <CustomButton
-          variant='outline-primary'
+          variant="outline-primary"
           onClick={() => setActiveStep((prev) => prev - 1)}
         >
           Cancel

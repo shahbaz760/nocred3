@@ -35,16 +35,19 @@ export const nameSchema = (message?: string) =>
     .max(24, 'Maximum 24 character')
     .required(message ?? 'This field is required');
 
+    export const NonSchema = () =>
+  yup
+    .string()
+    .trim()
+    .max(24, 'Maximum 24 character')
+    
+
 export const dateSchema = (message?: string) =>
   yup.date().required(message ?? 'This field is required');
 
 
-  export const numberSchema = (message?: string) =>
-  yup.number().required(message ?? 'This field is required')
-  .integer('Age must be an integer')
-  .min(12, 'Value must be at least 12')
-  .max(120, 'Value must be at most 120');
-
+  export const numberSchema = () =>
+  yup.number()
 export const yesNoSelect = (message?: string) =>
   yup
     .string()
@@ -73,7 +76,7 @@ export const postCaseValidationStep1 = yup.object().shape({
   email_address: emailSchema,
   date_birth: numberSchema(),
   date_accident: dateSchema(),
-  location_accident: nameSchema('Accident location is required'),
+  location_accident: NonSchema(),
   description_accident: yup
     .string()
     .trim()
@@ -98,8 +101,8 @@ export const postCaseValidationStep2 = yup.object().shape({
   damage_description: yup
     .string()
     .trim()
-    .max(800, 'Maximum 800 character allowed')
-    .required('Description is required'),
+    .max(800, 'Maximum 800 character allowed'),
+    
   insurance_provider: yup.string().trim(),
   policy_number: yup.number().typeError('Enter a valid policy number'),
 });

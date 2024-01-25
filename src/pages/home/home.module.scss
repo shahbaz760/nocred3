@@ -1,9 +1,9 @@
-@import 'src/styles/var';
+@import "src/styles/var";
 
 .page {
 }
 .first_view {
-  background-image: url('/images/home/dots.svg');
+  background-image: url("/images/home/Home Page.svg");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -12,6 +12,6 @@
     z-index: 2;
   }
   @include max($md) {
-    background-image: url('/images/home/dots_grey.svg');
+    background-image: url("/images/home/Home Page.svg");
   }
 }
