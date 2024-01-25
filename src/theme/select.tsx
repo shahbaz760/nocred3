@@ -1,6 +1,6 @@
-import { FormikProps } from 'formik';
-import { Form } from 'react-bootstrap';
-import Select, { GroupBase, OptionsOrGroups, Props } from 'react-select';
+import { FormikProps } from "formik";
+import { Form } from "react-bootstrap";
+import Select, { GroupBase, OptionsOrGroups, Props } from "react-select";
 
 interface IProps extends Props {
   name: string;
@@ -34,19 +34,19 @@ const ReactSelectField: React.FC<IProps> = ({
           IndicatorSeparator: () => null,
         }}
         options={options}
-        classNamePrefix='react_select'
+        classNamePrefix="react_select"
         onChange={
           formik
-            ? (e: any) => formik?.setFieldValue(name, e?.value ?? '')
+            ? (e: any) => formik?.setFieldValue(name, e?.value ?? "")
             : () => {}
         }
         {...rest}
         value={formikValue}
-        className={`${formikError ? 'has_error' : ''}`}
+        className={`${formikError ? "has_error" : ""}`}
       />
       {formikError ? (
-        <span className='error'>
-          {typeof formikError === 'string' ? formikError : ''}
+        <span className="error">
+          {typeof formikError === "string" ? formikError : ""}
         </span>
       ) : null}
     </Form.Group>

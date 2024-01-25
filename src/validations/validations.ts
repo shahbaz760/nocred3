@@ -38,6 +38,13 @@ export const nameSchema = (message?: string) =>
 export const dateSchema = (message?: string) =>
   yup.date().required(message ?? 'This field is required');
 
+
+  export const numberSchema = (message?: string) =>
+  yup.number().required(message ?? 'This field is required')
+  .integer('Age must be an integer')
+  .min(12, 'Value must be at least 12')
+  .max(120, 'Value must be at most 120');
+
 export const yesNoSelect = (message?: string) =>
   yup
     .string()
@@ -64,7 +71,7 @@ export const postCaseValidationStep1 = yup.object().shape({
   full_name: nameSchema('Full Name is required'),
   phone_number: phoneSchema,
   email_address: emailSchema,
-  date_birth: dateSchema(),
+  date_birth: numberSchema(),
   date_accident: dateSchema(),
   location_accident: nameSchema('Accident location is required'),
   description_accident: yup

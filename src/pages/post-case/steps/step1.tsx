@@ -1,8 +1,8 @@
-import { FormikProps } from 'formik';
-import CustomButton from '../../../theme/button';
-import DateField from '../../../theme/date_input';
-import InputField from '../../../theme/input';
-import styles from '../postCase.module.scss';
+import { FormikProps } from "formik";
+import CustomButton from "../../../theme/button";
+import DateField from "../../../theme/date_input";
+import InputField from "../../../theme/input";
+import styles from "../postCase.module.scss";
 
 interface IProps {
   formik: FormikProps<any>;
@@ -17,36 +17,35 @@ const PostCaseStep1: React.FC<IProps> = ({ formik }) => {
         <div className={styles.fields_wrapper}>
           <div className={styles.md6}>
             <InputField
-              label='Full name'
+              label="Full name"
               formik={formik}
-              placeholder='Name'
-              name='full_name'
+              placeholder="Name"
+              name="full_name"
             />
           </div>
           <div className={styles.md6}>
             <InputField
-              label='Phone number'
+              label="Phone number"
               formik={formik}
-              placeholder='Phone'
-              name='phone_number'
+              placeholder="Phone"
+              name="phone_number"
             />
           </div>
           <div className={styles.md6}>
             <InputField
-              label='Email address'
+              label="Email address"
               formik={formik}
-              placeholder='Email'
-              name='email_address'
+              placeholder="Email"
+              name="email_address"
             />
           </div>
           <div className={styles.md6}>
-            <DateField
+            <InputField
               formik={formik}
-              label='Date of birth'
-              name='date_birth'
-              selected={formik?.values?.date_birth}
-              onChange={(date) => formik.setFieldValue('date_birth', date)}
-              placeholderText='Select date'
+              label="Date of birth"
+              name="date_birth"
+              type="number"
+              placeholder="DOB"
             />
           </div>
         </div>
@@ -57,46 +56,46 @@ const PostCaseStep1: React.FC<IProps> = ({ formik }) => {
           <div className={styles.md6}>
             <DateField
               formik={formik}
-              label='Date of accident'
-              name='date_accident'
+              label="Date of accident"
+              name="date_accident"
               selected={formik?.values?.date_accident}
-              onChange={(date) => formik.setFieldValue('date_accident', date)}
-              placeholderText='Select date'
+              onChange={(date) => formik.setFieldValue("date_accident", date)}
+              placeholderText="Select date"
             />
           </div>
           <div className={styles.md6}>
             <InputField
-              label='Location of accident'
+              label="Location of accident"
               formik={formik}
-              placeholder='Freeway'
-              name='location_accident'
+              placeholder="Freeway"
+              name="location_accident"
             />
           </div>
           <div>
             <InputField
-              label='Brief description of the accident'
-              as='textarea'
+              label="Brief description of the accident"
+              as="textarea"
               rows={6}
               formik={formik}
-              placeholder='Enter a description...'
-              name='description_accident'
+              placeholder="Enter a description..."
+              name="description_accident"
             />
           </div>
           <div>
             <InputField
-              label='Weather and road conditions (if relevant)'
-              as='textarea'
+              label="Weather and road conditions (if relevant)"
+              as="textarea"
               rows={6}
               formik={formik}
-              placeholder='Enter a description...'
-              name='weather_condition'
+              placeholder="Enter a description..."
+              name="weather_condition"
             />
           </div>
         </div>
       </div>
       <div className={styles.submit_btn_wrap}>
         <CustomButton
-          variant='outline-primary'
+          variant="outline-primary"
           // onClick={() => setActiveStep((prev) => prev - 1)}
         >
           Cancel
