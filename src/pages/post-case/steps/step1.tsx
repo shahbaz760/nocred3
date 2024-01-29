@@ -6,7 +6,7 @@ import styles from "../postCase.module.scss";
 import SelectField from "../../../theme/select_input";
 
 interface IProps {
-  formik: FormikProps<any>;
+  formik?: FormikProps<any>;
 }
 
 const PostCaseStep1: React.FC<IProps> = ({ formik }) => {
@@ -46,7 +46,6 @@ const PostCaseStep1: React.FC<IProps> = ({ formik }) => {
           <div className={styles.md6}>
             <div className={styles.field_wrap}>
               <label htmlFor="age">Age</label>
-              <br />
 
               <SelectField
                 formik={formik}
@@ -70,7 +69,7 @@ const PostCaseStep1: React.FC<IProps> = ({ formik }) => {
               label="Date of accident"
               name="date_accident"
               selected={formik?.values?.date_accident}
-              onChange={(date) => formik.setFieldValue("date_accident", date)}
+              onChange={(date) => formik?.setFieldValue("date_accident", date)}
               placeholderText="Select date"
             />
           </div>
@@ -112,7 +111,7 @@ const PostCaseStep1: React.FC<IProps> = ({ formik }) => {
         >
           Cancel
         </CustomButton>
-        <CustomButton onClick={() => formik.handleSubmit()}>
+        <CustomButton onClick={() => formik?.handleSubmit()}>
           Save & Next
         </CustomButton>
       </div>

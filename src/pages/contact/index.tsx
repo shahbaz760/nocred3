@@ -1,19 +1,19 @@
-import { useFormik } from 'formik';
-import { useState } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { toast } from 'sonner';
-import { MessageIcon, PhoneIcon } from '../../assets/svg';
-import Footer from '../../common/footer';
-import Header from '../../common/header';
-import { contactFormTemplate } from '../../components/emailTemplates';
-import SectionHeading from '../../components/sectionHeading';
-import PageLayout from '../../layouts/pageLayout/pageLayout';
-import { sendGridSubmitCall } from '../../services';
-import CustomButton from '../../theme/button';
-import InputField from '../../theme/input';
-import { contactUsValidationScheme } from '../../validations/validations';
-import styles from './contact.module.scss';
+import { useFormik } from "formik";
+import { useState } from "react";
+import { Col, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { toast } from "sonner";
+import { MessageIcon, PhoneIcon } from "../../assets/svg";
+import Footer from "../../common/footer";
+import Header from "../../common/header";
+import { contactFormTemplate } from "../../components/emailTemplates";
+import SectionHeading from "../../components/sectionHeading";
+import PageLayout from "../../layouts/pageLayout/pageLayout";
+import { sendGridSubmitCall } from "../../services";
+import CustomButton from "../../theme/button";
+import InputField from "../../theme/input";
+import { contactUsValidationScheme } from "../../validations/validations";
+import styles from "./contact.module.scss";
 
 interface formProps {
   first_name: string;
@@ -27,11 +27,11 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
   const formik = useFormik({
     initialValues: {
-      first_name: '',
-      last_name: '',
-      email: '',
-      phone: '',
-      message: '',
+      first_name: "",
+      last_name: "",
+      email: "",
+      phone: "",
+      message: "",
       // accept_terms: false,
     },
     validationSchema: contactUsValidationScheme,
@@ -46,18 +46,17 @@ const Contact = () => {
       const data = contactFormTemplate(values);
       const responseStatus = await sendGridSubmitCall(
         data,
-        'New query from contact form'
+        "New query from contact form"
       );
-      console.log('responseStatus', responseStatus);
 
       if (responseStatus) {
         formik.resetForm();
-        toast.success('Email send successfully');
+        toast.success("Email send successfully");
       } else {
-        toast.error('Something went wrong, Please try after sometime');
+        toast.error("Something went wrong, Please try after sometime");
       }
     } catch (error) {
-      toast.error('Something went wrong, Please try after sometime');
+      toast.error("Something went wrong, Please try after sometime");
     }
     setLoading(false);
   };
@@ -65,22 +64,22 @@ const Contact = () => {
   const detailBox = [
     {
       icon: <MessageIcon />,
-      title: 'Chat with Support',
+      title: "Chat with Support",
       description: (
         <p>Need a quick answer? Our support team is just a message away.</p>
       ),
-      link: 'support@attorneyshoppe.com',
+      link: "support@attorneyshoppe.com",
     },
     {
       icon: <PhoneIcon />,
-      title: 'Talk to Us',
+      title: "Talk to Us",
       description: (
         <p>
           Prefer a conversation? We're available Monday through Friday from 8 am
           to 5 pm to take your call.
         </p>
       ),
-      link: '+1 (555) 000-0000',
+      link: "+1 (555) 000-0000",
     },
   ];
 
@@ -100,7 +99,7 @@ const Contact = () => {
                     <div className={styles.icon}>{item.icon}</div>
                     <h5>{item.title}</h5>
                     {item.description}
-                    <Link to={`${index === 0 ? 'mailto' : 'tel'}:${item.link}`}>
+                    <Link to={`${index === 0 ? "mailto" : "tel"}:${item.link}`}>
                       {item.link}
                     </Link>
                   </div>
@@ -112,7 +111,7 @@ const Contact = () => {
           <div className={styles.form_section}>
             <div className={styles.heading}>
               <SectionHeading
-                heading='Get in Touch'
+                heading="Get in Touch"
                 subHeading="Fill out the form below, and we'll get back to you as promptly as we can."
               />
             </div>
@@ -121,44 +120,44 @@ const Contact = () => {
                 <Row className={`${styles.form_row}`}>
                   <Col md={6}>
                     <InputField
-                      label='First name'
+                      label="First name"
                       formik={formik}
-                      placeholder='First name'
-                      name='first_name'
+                      placeholder="First name"
+                      name="first_name"
                     />
                   </Col>
                   <Col md={6}>
                     <InputField
-                      label='Last name'
+                      label="Last name"
                       formik={formik}
-                      placeholder='Last name'
-                      name='last_name'
+                      placeholder="Last name"
+                      name="last_name"
                     />
                   </Col>
                   <Col md={12}>
                     <InputField
-                      label='Email'
+                      label="Email"
                       formik={formik}
-                      placeholder='you@company.com'
-                      name='email'
+                      placeholder="you@company.com"
+                      name="email"
                     />
                   </Col>
                   <Col md={12}>
                     <InputField
-                      label='Phone number'
+                      label="Phone number"
                       formik={formik}
-                      placeholder='+1 (555) 000-0000'
-                      name='phone'
+                      placeholder="+1 (555) 000-0000"
+                      name="phone"
                     />
                   </Col>
                   <Col md={12}>
                     <InputField
-                      label='Message'
-                      as='textarea'
+                      label="Message"
+                      as="textarea"
                       rows={8}
                       formik={formik}
-                      placeholder='Leave us a message...'
-                      name='message'
+                      placeholder="Leave us a message..."
+                      name="message"
                     />
                   </Col>
                   {/* <Col md={12} className='position-relative'>
@@ -189,7 +188,7 @@ const Contact = () => {
                 </Row>
                 <CustomButton
                   className={styles.form_btn}
-                  type='submit'
+                  type="submit"
                   loading={loading}
                 >
                   Send Message
