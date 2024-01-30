@@ -17,31 +17,24 @@ const Footer = () => {
                 {/* <h6>Product</h6> */}
                 <div className={styles.links_list}>
                   <Link to='/'>Home</Link>
-                  {/* <Link to=''>Overview</Link>
-                  <Link to=''>Features</Link>
-                  <Link to=''>Solutions</Link>
-                  <Link to=''>Tutorials</Link>
-                  <Link to=''>Pricing</Link>
-                  <Link to=''>Releases</Link> */}
                 </div>
               </div>
               <div className={styles.links_column}>
                 {/* <h6>Company</h6> */}
                 <div className={styles.links_list}>
                   <Link to='/about'>About</Link>
-                  {/* <Link to='/'>Home</Link>
-                  <Link to='/about'>About</Link>
-                  <Link to='/contact'>Contact Us</Link> */}
                 </div>
               </div>
               <div className={styles.links_column}>
                 {/* <h6>Legal</h6> */}
                 <div className={styles.links_list}>
                   <Link to='/contact'>Contact Us</Link>
-                  {/* <Link to=''>Terms</Link>
-                  <Link to=''>Privacy</Link>
-                  <Link to=''>Cookies</Link>
-                  <Link to=''>Licenses</Link> */}
+                </div>
+              </div>
+              <div className={styles.links_column}>
+                {/* <h6>Legal</h6> */}
+                <div className={styles.links_list}>
+                  <Link to='/privacy-policy'>Privacy Policy</Link>
                 </div>
               </div>
             </div>

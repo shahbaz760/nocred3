@@ -1,0 +1,64 @@
+@import 'src/styles/var';
+
+.page {
+  .page_wrap {
+    padding: var(--spacing-9xl) 0;
+    max-width: 744px;
+    margin: auto;
+    @include max($lg) {
+      padding: var(--spacing-7xl) 0 var(--spacing-lg);
+    }
+  }
+  .page_heading {
+    padding-bottom: var(--spacing-9xl);
+    .subtitle {
+      font-size: var(--f18);
+      color: $black;
+    }
+    @include max($lg) {
+      padding-bottom: var(--spacing-6xl);
+      text-align: center;
+      // padding: var(--spacing-7xl) 0 calc(2 * var(--spacing-6xl));
+    }
+  }
+  .page_content {
+    color: $black;
+
+    .list {
+      font-size: var(--f18);
+      list-style: none;
+      padding: 0;
+      font-weight: 400;
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-xl);
+    }
+    h4 {
+      margin: var(--spacing-5xl) 0 var(--spacing-2xl);
+      font-size: var(--f30);
+    }
+    p {
+      color: inherit;
+      font-size: var(--f18);
+      margin-bottom: var(--spacing-2xl);
+    }
+    .content_box {
+      background-color: $bg_grey;
+      padding: var(--spacing-4xl);
+      border-radius: 16px;
+      h5 {
+        margin-bottom: var(--spacing-2xl);
+        font-weight: 600;
+        font-size: var(--f24);
+      }
+    }
+    @include max($lg) {
+      h4 {
+        text-align: center;
+      }
+      p {
+        text-align: center;
+      }
+    }
+  }
+}

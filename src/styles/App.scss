@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import "src/styles/var";
-@import "bootstrap/scss/bootstrap";
-@import "src/styles/common";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import 'src/styles/var';
+@import 'bootstrap/scss/bootstrap';
+@import 'src/styles/common';
 
 :root {
   @include cssVariables;
@@ -12,7 +12,7 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 // =========== theme components styles ===========
@@ -27,6 +27,7 @@ body {
   box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
   border-radius: 8px;
   position: relative;
+  cursor: pointer;
   .loader {
     line-height: 1;
     position: absolute;
@@ -75,7 +76,7 @@ body {
     color: $textSecondary;
   }
   #requiredLabel::after {
-    content: "*";
+    content: '*';
     width: 1.5em;
     margin-right: 1.5em;
     color: $red;
