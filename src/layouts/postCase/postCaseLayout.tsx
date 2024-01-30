@@ -23,11 +23,11 @@ const PostCaseLayout = ({ activeStep, children, state }: IProps) => {
     if (!state && activeStep !== 1) {
       navigate(-1);
     }
-  }, []);
+  }, [state, activeStep]);
 
   return (
     <PageLayout>
-      <div className={styles.post_page}>
+      <div className={`${styles.post_page} ${activeStep === 4 ? 'p-0' : ''}`}>
         <div className={styles.page_wrapper}>
           <div className='d-lg-none'>
             <Header />
