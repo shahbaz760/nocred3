@@ -68,7 +68,7 @@ const Contact = () => {
       description: (
         <p>Need a quick answer? Our support team is just a message away.</p>
       ),
-      link: "support@attorneyshoppe.com",
+      link: "info@useattorneyshoppe.com",
     },
     {
       icon: <PhoneIcon />,
@@ -79,7 +79,7 @@ const Contact = () => {
           to 5 pm to take your call.
         </p>
       ),
-      link: "+1 (555) 000-0000",
+      link: "+1 (424) 622-1509",
     },
   ];
 
