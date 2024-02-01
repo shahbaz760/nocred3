@@ -1,15 +1,15 @@
-import { useFormik } from 'formik';
-import { useState } from 'react';
-import { NavLink, useLocation, useNavigate } from 'react-router-dom';
-import { toast } from 'sonner';
-import { postCaseFormTemplate } from '../../../components/emailTemplates';
-import PostCaseLayout from '../../../layouts/postCase/postCaseLayout';
-import { sendGridSubmitCall } from '../../../services';
-import CustomButton from '../../../theme/button';
-import InputField from '../../../theme/input';
-import SelectField from '../../../theme/select_input';
-import { postCaseValidationStep3 } from '../../../validations/validations';
-import styles from '../postCase.module.scss';
+import { useFormik } from "formik";
+import { useState } from "react";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { toast } from "sonner";
+import { postCaseFormTemplate } from "../../../components/emailTemplates";
+import PostCaseLayout from "../../../layouts/postCase/postCaseLayout";
+import { sendGridSubmitCall } from "../../../services";
+import CustomButton from "../../../theme/button";
+import InputField from "../../../theme/input";
+import SelectField from "../../../theme/select_input";
+import { postCaseValidationStep3 } from "../../../validations/validations";
+import styles from "../postCase.module.scss";
 
 const Step3 = () => {
   const [loading, setLoading] = useState(false);
@@ -18,9 +18,9 @@ const Step3 = () => {
   const navigate = useNavigate();
   const formikStep3 = useFormik({
     initialValues: {
-      company_name: '',
-      policy_number: '',
-      accident_report: 'no',
+      company_name: "",
+      policy_number: "",
+      accident_report: "no",
     },
     validationSchema: postCaseValidationStep3,
     onSubmit: () => {
@@ -35,16 +35,16 @@ const Step3 = () => {
         ...state,
         ...formikStep3.values,
       });
-      const responseStatus = await sendGridSubmitCall(data, 'New case posted');
+      const responseStatus = await sendGridSubmitCall(data, "New case posted");
       if (responseStatus) {
         formikStep3.resetForm();
         window.scrollTo(0, 0);
-        navigate('/thank-you');
+        navigate("/thank-you");
       } else {
-        toast.error('Something went wrong, Please try after sometime');
+        toast.error("Something went wrong, Please try after sometime");
       }
     } catch (error) {
-      toast.error('Something went wrong, Please try after sometime');
+      toast.error("Something went wrong, Please try after sometime");
     }
     setLoading(false);
   };
@@ -58,18 +58,18 @@ const Step3 = () => {
           <div className={styles.fields_wrapper}>
             <div>
               <InputField
-                label='Insurance company name (Optional)'
+                label="Insurance company name (Optional)"
                 formik={formikStep3}
-                placeholder='Name'
-                name='company_name'
+                placeholder="Name"
+                name="company_name"
               />
             </div>
             <div>
               <InputField
-                label='Policy number (Optional)'
+                label="Policy number (Optional)"
                 formik={formikStep3}
-                placeholder='Number'
-                name='policy_number'
+                placeholder="Number"
+                name="policy_number"
               />
             </div>
           </div>
@@ -79,12 +79,12 @@ const Step3 = () => {
           <div className={styles.fields_wrapper}>
             <div>
               <SelectField
-                label='Was an official accident report filled'
+                label="Was an official accident report filled"
                 formik={formikStep3}
-                name='accident_report'
+                name="accident_report"
                 optionList={[
-                  { label: 'Yes', value: 'yes' },
-                  { label: 'No', value: 'no' },
+                  { label: "Yes", value: "yes" },
+                  { label: "No", value: "no" },
                 ]}
                 isRequired
               />
@@ -92,10 +92,10 @@ const Step3 = () => {
           </div>
         </div>
         <div className={styles.submit_btn_wrap}>
-          <NavLink to='/post-case'>
+          <NavLink to="/post-case">
             <CustomButton
-              variant='outline-primary'
-              onClick={() => navigate('/post-case', { replace: true })}
+              variant="outline-primary"
+              onClick={() => navigate("/post-case", { replace: true })}
             >
               Cancel
             </CustomButton>
