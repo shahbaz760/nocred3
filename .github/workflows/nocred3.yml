@@ -1,1 +1,20 @@
-hdgfsdjfghghjg
+name: nocred3
+
+on:
+  push:
+    branches:
+        - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+        - name: git checkout
+          uses: actions/checkout@v2
+
+        - name: Set up AWS OIDC Authentication
+          id: aws_oidc
+          uses: aws-actions/configure-aws-credentials@v1
+          with:
+              role-to-assume: arn:aws:iam::637527414831:oidc-provider/token.actions.githubusercontent.com 
+              aws-region: us-east-2  
