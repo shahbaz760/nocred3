@@ -26,3 +26,9 @@ jobs:
 
         - name: Check instance   
           run: aws ssm describe-instance-information --region us-east-2
+
+        - name: Retrieve secret from AWS Secrets Manager
+          run: |
+                SECRET_VALUE=$(aws secretsmanager get-secret-value --secret-id arn:aws:secretsmanager:us-east-2:637527414831:secret:nocred2-5xwQFb | jq -r '.SecretString | fromjson | .env')
+                echo $SECRET_VALUE > .env
+                cat .env
