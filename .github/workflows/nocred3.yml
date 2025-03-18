@@ -16,5 +16,5 @@ jobs:
           id: aws_oidc
           uses: aws-actions/configure-aws-credentials@v1
           with:
-              role-to-assume: arn:aws:iam::637527414831:oidc-provider/token.actions.githubusercontent.com 
+              role-to-assume: arn:aws:iam::637527414831:role/nocred3
               aws-region: us-east-2  
