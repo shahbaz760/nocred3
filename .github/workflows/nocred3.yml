@@ -29,6 +29,6 @@ jobs:
 
         - name: Retrieve secret from AWS Secrets Manager
           run: |
-                SECRET_VALUE=$(aws secretsmanager get-secret-value --secret-id arn:aws:secretsmanager:us-east-3:637527414831:secret:nocred3-5xwQFb | jq -r '.SecretString | fromjson | .env')
+                SECRET_VALUE=$(aws secretsmanager get-secret-value --secret-id arn:aws:secretsmanager:us-east-2:637527414831:secret:nocred3-5xwQFb | jq -r '.SecretString | fromjson | .env')
                 echo $SECRET_VALUE > .env
                 cat .env
